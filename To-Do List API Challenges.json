@@ -1,0 +1,774 @@
+{
+  "name": "To-Do List API Challenges",
+  "version": "1",
+  "items": [
+    {
+      "type": "folder",
+      "name": "01 - Getting Started",
+      "items": [
+        {
+          "type": "http",
+          "name": "01 - POST challenger",
+          "seq": 1,
+          "request": {
+            "url": "{{base_url}}/challenger",
+            "method": "POST",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {
+              "res": "bru.setEnvVar(\"challenger_id\", res.headers['x-challenger'])"
+            },
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 201",
+                "enabled": true,
+                "uid": "UBy2TQzqg9uTvyQchlDuH"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "02 - First Real Challenge",
+      "items": [
+        {
+          "type": "http",
+          "name": "02 - GET challenges",
+          "seq": 1,
+          "request": {
+            "url": "{{base_url}}/challenges",
+            "method": "GET",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 200",
+                "enabled": true,
+                "uid": "t3ARbLaJLjD3lr0E4FGnX"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "03 - GET Challenges",
+      "items": [
+        {
+          "type": "http",
+          "name": "03 - GET todos",
+          "seq": 1,
+          "request": {
+            "url": "{{base_url}}/todos",
+            "method": "GET",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 200",
+                "enabled": true,
+                "uid": "fKPXnqwyxCE3VAZ68yyLc"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "06 - GET todos with id (does not exist)",
+          "seq": 4,
+          "request": {
+            "url": "{{base_url}}/todos/0",
+            "method": "GET",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 404",
+                "enabled": true,
+                "uid": "dpOwJUTVCbnFjGWs6k1N4"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "04 - GET todo not plural",
+          "seq": 2,
+          "request": {
+            "url": "{{base_url}}/todo",
+            "method": "GET",
+            "headers": [],
+            "body": {
+              "mode": "json",
+              "json": "",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 404",
+                "enabled": true,
+                "uid": "AJRdYK5YxYLjB1DX2iBhh"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "05 - GET todos with id",
+          "seq": 3,
+          "request": {
+            "url": "{{base_url}}/todos/1",
+            "method": "GET",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 200",
+                "enabled": true,
+                "uid": "XqlIwNYWkBpqVPlgZZxdb"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "04 - HEAD Challenges",
+      "items": [
+        {
+          "type": "http",
+          "name": "08 - HEAD todos",
+          "seq": 1,
+          "request": {
+            "url": "{{base_url}}/todos",
+            "method": "HEAD",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 200",
+                "enabled": true,
+                "uid": "IzrJvy1N5m6lGZZYz3zg4"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "05 - Creation Challenges with POST",
+      "items": [
+        {
+          "type": "http",
+          "name": "09 - POST new todo",
+          "seq": 1,
+          "request": {
+            "url": "{{base_url}}/todos",
+            "method": "POST",
+            "headers": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"title\": \"A title\",\n  \"doneStatus\": false,\n  \"description\": \"my description\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 201",
+                "enabled": true,
+                "uid": "6GRHImNRhfFuRKfqhWypx"
+              },
+              {
+                "name": "res.body.title",
+                "value": "isString res.body[]",
+                "enabled": true,
+                "uid": "coNdEAiERocQEQhPIk9sa"
+              },
+              {
+                "name": "res.body.description",
+                "value": "isString",
+                "enabled": true,
+                "uid": "rPn5M5zGq9CXpN7dNwdsg"
+              },
+              {
+                "name": "res.body.doneStatus",
+                "value": "isBoolean",
+                "enabled": true,
+                "uid": "XEWpCaPGpwoQjLa0k8gs1"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "10 - POST todo invalid doneStatus",
+          "seq": 2,
+          "request": {
+            "url": "{{base_url}}/todos",
+            "method": "POST",
+            "headers": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"title\": \"A title\",\n  \"doneStatus\": \"done\",\n  \"description\": \"my description\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 400",
+                "enabled": true,
+                "uid": "JKiSsYOl0QwVpIjjr5Cdj"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "11 - POST todo title exceeds 50 chars",
+          "seq": 3,
+          "request": {
+            "url": "{{base_url}}/todos",
+            "method": "POST",
+            "headers": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"title\": \"This to-do title will be exactly 51 characters long\",\n  \"doneStatus\": false,\n  \"description\": \"my description\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 400",
+                "enabled": true,
+                "uid": "y96A1wakvbvkKJ4JK2z0N"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "12 - POST todo desc exceeds 200 chars",
+          "seq": 4,
+          "request": {
+            "url": "{{base_url}}/todos",
+            "method": "POST",
+            "headers": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"title\": \"Description too long test\",\n  \"doneStatus\": false,\n  \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at nulla nec neque efficitur euismod sit amet ut sapien. Donec ornare nec dui nec ornare. Morbi luctus ligula ante, eget maximus arcu sed.\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 400",
+                "enabled": true,
+                "uid": "pGOdlhfKgOeXo3sL0DBgc"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "13 - POST todo max content",
+          "seq": 5,
+          "request": {
+            "url": "{{base_url}}/todos",
+            "method": "POST",
+            "headers": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"title\": \"Todo task title will be exactly 50 characters long\",\n  \"doneStatus\": false,\n  \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at nulla nec neque efficitur euismod sit amet ut sapien. Donec ornare nec dui nec ornare. Morbi luctus ligula ante, eget maximus arcu sed\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 201",
+                "enabled": true,
+                "uid": "h70uO1DQXAvqB2Wscw3HK"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "14 - POST todo content too long",
+          "seq": 6,
+          "request": {
+            "url": "{{base_url}}/todos",
+            "method": "POST",
+            "headers": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"title\": \"Content too long test\",\n  \"doneStatus\": false,\n  \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a massa faucibus ex facilisis pretium at vitae mi. Nulla facilisi. Sed ut pharetra nunc. Praesent tincidunt tellus vel tellus gravida mollis. Aenean cursus magna id ligula tincidunt, in eleifend leo fermentum. Nam tempus vel tortor ut auctor. Cras eget turpis enim. Aenean felis dolor, ullamcorper a ex vitae, iaculis aliquam purus. Aenean nisi tortor, rutrum et vulputate id, varius elementum tortor. Phasellus lacinia gravida nulla, commodo posuere est feugiat nec. Vivamus tincidunt tellus urna, vulputate egestas massa cursus et. Proin hendrerit metus id libero sodales lobortis. In hac habitasse platea dictumst. Aenean pharetra mattis leo nec fringilla. Integer fringilla molestie massa, vitae ornare risus facilisis sit amet. Fusce imperdiet arcu a leo cursus, id vulputate nunc fermentum. Nulla pharetra in sapien sed iaculis. Integer interdum ante nunc, in lobortis nisi aliquet eu. Donec finibus dolor quis augue sodales, eu accumsan lectus efficitur. Fusce malesuada mauris non lacus lacinia efficitur. Pellentesque egestas in sem et aliquet. Integer enim nulla, porttitor sed mi id, porttitor tempus est. Pellentesque ipsum sem, ornare a neque id, maximus facilisis erat. Curabitur porta tortor a sodales malesuada. Praesent non tempor dolor. Nullam eros eros, aliquam vitae dapibus at, tempus viverra ex. Aliquam malesuada semper risus, non porta libero finibus sagittis. Morbi sagittis, sapien vitae consectetur gravida, elit erat laoreet velit, quis blandit nibh ligula ut tortor. Curabitur nec velit id odio imperdiet porttitor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce id purus id diam elementum accumsan. Aliquam ultrices, metus et dignissim auctor, lacus ex commodo nibh, semper consequat erat sem a tortor. Aliquam sit amet nibh massa. Duis dignissim, metus ut consequat egestas, enim nibh pharetra mi, ac ultrices nibh est at tellus. Integer vitae pharetra leo. Etiam accumsan orci vehicula eros dapibus sollicitudin. Curabitur suscipit viverra ullamcorper. Morbi euismod luctus dolor, vitae ultricies quam finibus quis. Curabitur tellus orci, sodales quis sollicitudin eu, ullamcorper vitae purus. Vestibulum tellus odio, viverra id imperdiet rutrum, blandit in nunc. Phasellus in mauris eget mi vulputate lacinia vitae vel nulla. Aenean iaculis quis nibh et rhoncus. Ut viverra enim sit amet massa mollis, ut fringilla massa bibendum. Praesent viverra lorem a lacinia iaculis. Donec commodo, mauris posuere consectetur mattis, eros justo pharetra tellus, eget euismod sapien orci sed orci. Nunc sodales accumsan orci, eget facilisis ante semper at. Praesent euismod ultrices nisi, ut egestas nulla scelerisque sit amet. Aliquam erat volutpat. Aliquam vestibulum ultricies elit, at ullamcorper diam scelerisque sit amet. Duis a dui ultrices, iaculis risus a, lobortis neque. Quisque lorem arcu, aliquam quis purus id, volutpat auctor est. Proin rutrum nulla pulvinar velit sagittis, sed fermentum ex dapibus. Cras cursus diam sed tristique ullamcorper. Praesent convallis risus urna, ac pellentesque est iaculis in. Maecenas viverra interdum eros, nec venenatis sem sodales vel. Duis hendrerit pretium dui vel blandit. Pellentesque sed erat quis urna accumsan tristique quis ut magna. Vestibulum nec dolor feugiat, fringilla turpis quis, tempor arcu. Nullam tortor eros, fermentum quis augue at, sagittis hendrerit nulla. Maecenas ut dolor sed massa auctor convallis. Proin vitae elit tristique, consectetur tortor vel, fringilla urna. Curabitur interdum tempor odio et blandit. Cras a placerat metus, ut venenatis ex. Cras pulvinar metus a tellus bibendum, non vestibulum diam imperdiet. Nullam tempor nisl quis risus dapibus consequat. Morbi posuere risus lectus, eget pretium mi sodales sed. In accumsan elit a facilisis egestas. Proin sodales ultricies pellentesque. Aenean mollis scelerisque convallis. Vestibulum vel nulla faucibus, sagittis dui non, molestie velit. Morbi pulvinar dapibus quam id hendrerit. In gravida sed arcu in interdum. Suspendisse faucibus ullamcorper pellentesque. Pellentesque tempus tempus turpis ullamcorper maximus. Nunc lacinia est vitae ex fermentum sollicitudin. Etiam in tellus maximus, aliquam ligula nec, auctor nibh. In consectetur aliquam magna, at placerat orci mollis dignissim. Curabitur et lorem nisl. Cras leo dolor, maximus a ex sed, elementum efficitur velit. Aliquam suscipit, libero sed pretium commodo, nisl risus aliquam orci, a suscipit nulla odio a eros. Aenean nec lectus non risus luctus mollis ultricies a nisl. Donec lectus lorem, placerat in arcu at, vehicula maximus nisl. Morbi velit felis, congue maximus nibh vel, cursus feugiat justo. In a facilisis ligula, et pellentesque odio. Vivamus ac maximus lacus. Donec cursus at odio et tempus. Morbi porta vehicula lobortis. Ut lacus tellus, euismod et nisl condimentum, malesuada ornare felis. Duis consequat, nibh scelerisque porttitor semper, risus a.\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 413",
+                "enabled": true,
+                "uid": "wnQEAwSzV60wTTA7JDBs2"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "15 - POST todo unknown field",
+          "seq": 7,
+          "request": {
+            "url": "{{base_url}}/todos",
+            "method": "POST",
+            "headers": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"title\": \"I am a title\",\n  \"doneStatus\": false,\n  \"description\": \"I'm a description.\",\n  \"bonusField\": \"I am an extra field that does not exist in the spec.\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 400",
+                "enabled": true,
+                "uid": "agbsHExlaWk1rIJb1yj3Q"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "06 - Creation Challenges with PUT",
+      "items": [
+        {
+          "type": "http",
+          "name": "16 - PUT to create a todo with new id",
+          "seq": 1,
+          "request": {
+            "url": "{{base_url}}/todos/9999",
+            "method": "PUT",
+            "headers": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"title\": \"PUT test new todo\",\n  \"doneStatus\": false,\n  \"description\": \"This is a PUT test to attempt to create a todo.\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 400",
+                "enabled": true,
+                "uid": "TSoXAaXOdmuOQxOYiCxxa"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "PUT to create a todo with no id",
+          "seq": 2,
+          "request": {
+            "url": "{{base_url}}/todos/",
+            "method": "PUT",
+            "headers": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"title\": \"PUT test new todo\",\n  \"doneStatus\": false,\n  \"description\": \"This is a PUT test to attempt to create a todo.\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 404",
+                "enabled": true,
+                "uid": "bQ8kVqlLg2OoiVgeOzByN"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "08 - Update Challenges with PUT",
+      "items": [
+        {
+          "type": "http",
+          "name": "19 - PUT update whole payload",
+          "seq": 1,
+          "request": {
+            "url": "{{base_url}}/todos/1",
+            "method": "PUT",
+            "headers": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"title\": \"PUT test with known id\",\n  \"doneStatus\": false,\n  \"description\": \"This is a put test on an existing todo using the id.\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 400",
+                "enabled": true,
+                "uid": "yraROtfcJwVgMcUCNBFJa"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "07 - Update Challenges with POST"
+    },
+    {
+      "type": "folder",
+      "name": "09 - DELETE Challenges"
+    },
+    {
+      "type": "folder",
+      "name": "10 - OPTIONS Challenges"
+    },
+    {
+      "type": "folder",
+      "name": "11 - Accept Challenges"
+    },
+    {
+      "type": "folder",
+      "name": "12 - Content-Type Challenges"
+    },
+    {
+      "type": "folder",
+      "name": "13 - Restore your session"
+    },
+    {
+      "type": "folder",
+      "name": "14 - Mix Accept and Content-Type Challenges"
+    },
+    {
+      "type": "folder",
+      "name": "15 - HTTP Method Override Challenges"
+    },
+    {
+      "type": "folder",
+      "name": "16 - Authentication Challenges"
+    },
+    {
+      "type": "folder",
+      "name": "17 - Authorization Challenges"
+    },
+    {
+      "type": "folder",
+      "name": "18 - Miscellaneous Challenges"
+    }
+  ],
+  "activeEnvironmentUid": "TA1kpQXgRBizzzSsRN7zm",
+  "environments": [
+    {
+      "variables": [
+        {
+          "name": "base_url",
+          "value": "https://apichallenges.herokuapp.com",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "challenger_id",
+          "value": "2d4462f3-9475-4240-b59e-aa5fa31cae91",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        }
+      ],
+      "name": "Heroku Instance"
+    }
+  ]
+}
