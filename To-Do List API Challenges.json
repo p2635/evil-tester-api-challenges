@@ -124,7 +124,7 @@
                 "name": "res.status",
                 "value": "eq 200",
                 "enabled": true,
-                "uid": "fKPXnqwyxCE3VAZ68yyLc"
+                "uid": "MIebyD6iWX3CU5ONEutEi"
               }
             ],
             "tests": "",
@@ -720,7 +720,7 @@
       "items": [
         {
           "type": "http",
-          "name": "19 - PUT update whole payload",
+          "name": "19 - PUT update all todo details",
           "seq": 1,
           "request": {
             "url": "{{base_url}}/todos/1",
@@ -734,7 +734,119 @@
             ],
             "body": {
               "mode": "json",
-              "json": "{\n  \"title\": \"PUT test with known id\",\n  \"doneStatus\": false,\n  \"description\": \"This is a put test on an existing todo using the id.\"\n}",
+              "json": "{\n  \"title\": \"Updated todo title\",\n  \"doneStatus\": true,\n  \"description\": \"Updated todo description. The todo should be done status.\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 200",
+                "enabled": true,
+                "uid": "wGkz7utmXhIqhzrxeQbaL"
+              },
+              {
+                "name": "res.body.title",
+                "value": "eq Updated todo title",
+                "enabled": true,
+                "uid": "N4VrRxrkCi7TBmxCzw75i"
+              },
+              {
+                "name": "res.body.doneStatus",
+                "value": "eq true",
+                "enabled": true,
+                "uid": "o0FP6aYjJvucXFGkVVwXh"
+              },
+              {
+                "name": "res.body.description",
+                "value": "eq Updated todo description. The todo should be done status.",
+                "enabled": true,
+                "uid": "3r1dN9EdBZU15485b4nLy"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "20 - PUT update partial (title)",
+          "seq": 2,
+          "request": {
+            "url": "{{base_url}}/todos/1",
+            "method": "PUT",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"title\": \"Only the title is updated\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 200",
+                "enabled": true,
+                "uid": "12eLV9TusbkYs2aD80DgY"
+              },
+              {
+                "name": "res.body.title",
+                "value": "eq Only the title is updated",
+                "enabled": true,
+                "uid": "rUv4WkXuLzGaVVTWeJ6WB"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "21 - PUT no title",
+          "seq": 3,
+          "request": {
+            "url": "{{base_url}}/todos/1",
+            "method": "PUT",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"title\": \"\"\n}",
               "formUrlEncoded": [],
               "multipartForm": []
             },
@@ -755,7 +867,51 @@
                 "name": "res.status",
                 "value": "eq 400",
                 "enabled": true,
-                "uid": "MkokP6U8XnmaLdn5Xu5gG"
+                "uid": "HSRqYaUqrRNfXeDW3OQ8c"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "22 - PUT no amend id",
+          "seq": 4,
+          "request": {
+            "url": "{{base_url}}/todos/1",
+            "method": "PUT",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"id\": 2,\n  \"title\": \"This is an amended title\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 400",
+                "enabled": true,
+                "uid": "Al1o5Fg7rlub4v6Xoofeu"
               }
             ],
             "tests": "",
@@ -766,19 +922,509 @@
     },
     {
       "type": "folder",
-      "name": "07 - Update Challenges with POST"
+      "name": "07 - Update Challenges with POST",
+      "items": [
+        {
+          "type": "http",
+          "name": "17 - POST to update todo to done",
+          "seq": 1,
+          "request": {
+            "url": "{{base_url}}/todos/1",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"doneStatus\": true\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 200",
+                "enabled": true,
+                "uid": "IUXdQYp8Hgy8EuusBpGCj"
+              },
+              {
+                "name": "res.body.doneStatus",
+                "value": "eq true",
+                "enabled": true,
+                "uid": "PYXszafhaR2aDbPL0rspX"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "18 - POST to update an invaild todo id",
+          "seq": 2,
+          "request": {
+            "url": "{{base_url}}/todos/9999",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"doneStatus\": true\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 404",
+                "enabled": true,
+                "uid": "neRTrGPiyXNUCnvrlRD73"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        }
+      ]
     },
     {
       "type": "folder",
-      "name": "09 - DELETE Challenges"
+      "name": "09 - DELETE Challenges",
+      "items": [
+        {
+          "type": "http",
+          "name": "23 - DELETE todo",
+          "seq": 1,
+          "request": {
+            "url": "{{base_url}}/todos/1",
+            "method": "DELETE",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"id\": 2,\n  \"title\": \"This is an amended title\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 200",
+                "enabled": true,
+                "uid": "l8bGVEtewGkipksvICZ16"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        }
+      ]
     },
     {
       "type": "folder",
-      "name": "10 - OPTIONS Challenges"
+      "name": "10 - OPTIONS Challenges",
+      "items": [
+        {
+          "type": "http",
+          "name": "24 - OPTIONS todo",
+          "seq": 1,
+          "request": {
+            "url": "{{base_url}}/todos",
+            "method": "OPTIONS",
+            "headers": [],
+            "body": {
+              "mode": "json",
+              "json": "",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 204",
+                "enabled": true,
+                "uid": "uhf2qCMNZitEeMD0Smolw"
+              },
+              {
+                "name": "res.headers.allow",
+                "value": "eq OPTIONS, GET, HEAD, POST",
+                "enabled": true,
+                "uid": "XtVQlHa35HVNEJ1JrGAR0"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        }
+      ]
     },
     {
       "type": "folder",
-      "name": "11 - Accept Challenges"
+      "name": "11 - Accept Challenges",
+      "items": [
+        {
+          "type": "http",
+          "name": "25 - GET todos XML",
+          "seq": 1,
+          "request": {
+            "url": "{{base_url}}/todos",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "Accept",
+                "value": "application/xml",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 200",
+                "enabled": true,
+                "uid": "AuNT18yoArAaul2RblXyQ"
+              },
+              {
+                "name": "res.headers['content-type']",
+                "value": "eq application/xml",
+                "enabled": true,
+                "uid": "n957trgzxT5k1RtVcVdSD"
+              },
+              {
+                "name": "res.body",
+                "value": "startsWith <todos>",
+                "enabled": true,
+                "uid": "ehidzWKqgUdwXXksnxEKV"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "26 - GET todos JSON",
+          "seq": 2,
+          "request": {
+            "url": "{{base_url}}/todos",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "Accept",
+                "value": "application/json",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 200",
+                "enabled": true,
+                "uid": "hctJ44QXrqIXO0ainQvNe"
+              },
+              {
+                "name": "res.headers['content-type']",
+                "value": "eq application/json",
+                "enabled": true,
+                "uid": "DLr3MaODA2TOrHW63j2R0"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "27 - GET todos ANY",
+          "seq": 3,
+          "request": {
+            "url": "{{base_url}}/todos",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "Accept",
+                "value": "*/*",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 200",
+                "enabled": true,
+                "uid": "wZaK3zzHOnANV04z1hpmA"
+              },
+              {
+                "name": "res.headers['content-type']",
+                "value": "eq application/json",
+                "enabled": true,
+                "uid": "vOwIGbPySEABimpn40IC9"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "28 - GET todos XML pref",
+          "seq": 4,
+          "request": {
+            "url": "{{base_url}}/todos",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "Accept",
+                "value": "application/xml, application/json",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 200",
+                "enabled": true,
+                "uid": "s7nNLN5D91KljhnT53IoP"
+              },
+              {
+                "name": "res.headers['content-type']",
+                "value": "eq application/xml",
+                "enabled": true,
+                "uid": "C6OHnWXhQLkHtECGoFkKf"
+              },
+              {
+                "name": "res.body",
+                "value": "startsWith <todos>",
+                "enabled": true,
+                "uid": "1FTj47UxzbCQrCffpKPjY"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "29 - GET todos no accept",
+          "seq": 5,
+          "request": {
+            "url": "{{base_url}}/todos",
+            "method": "GET",
+            "headers": [],
+            "body": {
+              "mode": "json",
+              "json": "",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 200",
+                "enabled": true,
+                "uid": "X3A2uZI082z6xZ2lARECW"
+              },
+              {
+                "name": "res.headers['content-type']",
+                "value": "eq application/json",
+                "enabled": true,
+                "uid": "LgDgLhaGLFqAtOtHh6aMH"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "30 - GET todos invalid accept",
+          "seq": 6,
+          "request": {
+            "url": "{{base_url}}/todos",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "Accept",
+                "value": "application/gzip",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 406",
+                "enabled": true,
+                "uid": "p5MYFQNKr8oL4PmirmqEr"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        }
+      ]
     },
     {
       "type": "folder",
@@ -822,7 +1468,7 @@
         },
         {
           "name": "challenger_id",
-          "value": "2d4462f3-9475-4240-b59e-aa5fa31cae91",
+          "value": "f004c6ad-fc5d-49f8-8db8-51678095c0a3",
           "enabled": true,
           "secret": false,
           "type": "text"
