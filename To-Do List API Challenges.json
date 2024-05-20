@@ -177,8 +177,7 @@
             "method": "GET",
             "headers": [],
             "body": {
-              "mode": "json",
-              "json": "",
+              "mode": "none",
               "formUrlEncoded": [],
               "multipartForm": []
             },
@@ -199,7 +198,7 @@
                 "name": "res.status",
                 "value": "eq 404",
                 "enabled": true,
-                "uid": "AJRdYK5YxYLjB1DX2iBhh"
+                "uid": "p64gaif82t4SLJWOpQzDs"
               }
             ],
             "tests": "",
@@ -1083,8 +1082,7 @@
             "method": "OPTIONS",
             "headers": [],
             "body": {
-              "mode": "json",
-              "json": "",
+              "mode": "none",
               "formUrlEncoded": [],
               "multipartForm": []
             },
@@ -1105,13 +1103,13 @@
                 "name": "res.status",
                 "value": "eq 204",
                 "enabled": true,
-                "uid": "uhf2qCMNZitEeMD0Smolw"
+                "uid": "elUkLhszEI3u6nhH6k0QP"
               },
               {
                 "name": "res.headers.allow",
                 "value": "eq OPTIONS, GET, HEAD, POST",
                 "enabled": true,
-                "uid": "XtVQlHa35HVNEJ1JrGAR0"
+                "uid": "YnB6Y5iENSnqigLetGmD0"
               }
             ],
             "tests": "",
@@ -1139,8 +1137,7 @@
               }
             ],
             "body": {
-              "mode": "json",
-              "json": "",
+              "mode": "none",
               "formUrlEncoded": [],
               "multipartForm": []
             },
@@ -1161,19 +1158,19 @@
                 "name": "res.status",
                 "value": "eq 200",
                 "enabled": true,
-                "uid": "AuNT18yoArAaul2RblXyQ"
+                "uid": "CUzw5SbTmPO5YGtLRic4W"
               },
               {
                 "name": "res.headers['content-type']",
                 "value": "eq application/xml",
                 "enabled": true,
-                "uid": "n957trgzxT5k1RtVcVdSD"
+                "uid": "iPz7lrTtvADaeYvFZlUxw"
               },
               {
                 "name": "res.body",
                 "value": "startsWith <todos>",
                 "enabled": true,
-                "uid": "ehidzWKqgUdwXXksnxEKV"
+                "uid": "UyXanyej9In65sF9qR8Df"
               }
             ],
             "tests": "",
@@ -1195,8 +1192,7 @@
               }
             ],
             "body": {
-              "mode": "json",
-              "json": "",
+              "mode": "none",
               "formUrlEncoded": [],
               "multipartForm": []
             },
@@ -1217,13 +1213,13 @@
                 "name": "res.status",
                 "value": "eq 200",
                 "enabled": true,
-                "uid": "hctJ44QXrqIXO0ainQvNe"
+                "uid": "e1mFKirVVCF7GlzOIUSbX"
               },
               {
                 "name": "res.headers['content-type']",
                 "value": "eq application/json",
                 "enabled": true,
-                "uid": "DLr3MaODA2TOrHW63j2R0"
+                "uid": "a7xtYJDFg7SEaMZRf957O"
               }
             ],
             "tests": "",
@@ -1245,8 +1241,7 @@
               }
             ],
             "body": {
-              "mode": "json",
-              "json": "",
+              "mode": "none",
               "formUrlEncoded": [],
               "multipartForm": []
             },
@@ -1267,13 +1262,13 @@
                 "name": "res.status",
                 "value": "eq 200",
                 "enabled": true,
-                "uid": "wZaK3zzHOnANV04z1hpmA"
+                "uid": "RQ3jpi8zz0Zf6HoZDZOi2"
               },
               {
                 "name": "res.headers['content-type']",
                 "value": "eq application/json",
                 "enabled": true,
-                "uid": "vOwIGbPySEABimpn40IC9"
+                "uid": "K1gTiIwMU6mK6YEZau3Wt"
               }
             ],
             "tests": "",
@@ -1295,8 +1290,7 @@
               }
             ],
             "body": {
-              "mode": "json",
-              "json": "",
+              "mode": "none",
               "formUrlEncoded": [],
               "multipartForm": []
             },
@@ -1317,19 +1311,19 @@
                 "name": "res.status",
                 "value": "eq 200",
                 "enabled": true,
-                "uid": "s7nNLN5D91KljhnT53IoP"
+                "uid": "79yagXHBjLe4edxP1CySj"
               },
               {
                 "name": "res.headers['content-type']",
                 "value": "eq application/xml",
                 "enabled": true,
-                "uid": "C6OHnWXhQLkHtECGoFkKf"
+                "uid": "ycRtUO3hyAu4S2OhlBptS"
               },
               {
                 "name": "res.body",
                 "value": "startsWith <todos>",
                 "enabled": true,
-                "uid": "1FTj47UxzbCQrCffpKPjY"
+                "uid": "KaO8Y6Wkwh5JQbj4OzNGV"
               }
             ],
             "tests": "",
@@ -1345,8 +1339,7 @@
             "method": "GET",
             "headers": [],
             "body": {
-              "mode": "json",
-              "json": "",
+              "mode": "none",
               "formUrlEncoded": [],
               "multipartForm": []
             },
@@ -1367,13 +1360,13 @@
                 "name": "res.status",
                 "value": "eq 200",
                 "enabled": true,
-                "uid": "X3A2uZI082z6xZ2lARECW"
+                "uid": "VctNKcKotuPy8ityqpQ6q"
               },
               {
                 "name": "res.headers['content-type']",
                 "value": "eq application/json",
                 "enabled": true,
-                "uid": "LgDgLhaGLFqAtOtHh6aMH"
+                "uid": "E7y4sDTjUflW7w85hHC5F"
               }
             ],
             "tests": "",
@@ -1395,8 +1388,7 @@
               }
             ],
             "body": {
-              "mode": "json",
-              "json": "",
+              "mode": "none",
               "formUrlEncoded": [],
               "multipartForm": []
             },
@@ -1417,7 +1409,7 @@
                 "name": "res.status",
                 "value": "eq 406",
                 "enabled": true,
-                "uid": "p5MYFQNKr8oL4PmirmqEr"
+                "uid": "wXl4UcweozRmm5zbCKBNL"
               }
             ],
             "tests": "",
@@ -1428,11 +1420,329 @@
     },
     {
       "type": "folder",
-      "name": "12 - Content-Type Challenges"
+      "name": "12 - Content-Type Challenges",
+      "items": [
+        {
+          "type": "http",
+          "name": "31 - POST todos XML",
+          "seq": 1,
+          "request": {
+            "url": "{{base_url}}/todos",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/xml",
+                "enabled": true
+              },
+              {
+                "name": "Accept",
+                "value": "application/xml",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "xml",
+              "json": "<todo>\n  <doneStatus>false</doneStatus>\n  <description>my description</description>\n  <title>A title</title>\n</todo>",
+              "xml": "<todo>\n  <doneStatus>false</doneStatus>\n  <description>todo desc sent in XML</description>\n  <title>todo sent in XML</title>\n</todo>",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 201",
+                "enabled": true,
+                "uid": "Kluo5A7MTsNwccpJMNhqI"
+              },
+              {
+                "name": "res.headers['content-type']",
+                "value": "eq application/xml",
+                "enabled": true,
+                "uid": "OUzV7x7aOdAcmRHVbCBj9"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "32 - POST todos JSON",
+          "seq": 2,
+          "request": {
+            "url": "{{base_url}}/todos",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "enabled": true
+              },
+              {
+                "name": "Accept",
+                "value": "application/json",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"title\": \"Challenge 32 JSON Task Created\",\n  \"doneStatus\": false,\n  \"description\": \"This is a task created using POST for a JSON content type.\"\n}",
+              "xml": "<todo>\n  <doneStatus>false</doneStatus>\n  <description>todo desc sent in XML</description>\n  <title>todo sent in XML</title>\n</todo>",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 201",
+                "enabled": true,
+                "uid": "V9jpjWtIj2QwrsTClRtjE"
+              },
+              {
+                "name": "res.headers['content-type']",
+                "value": "eq application/json",
+                "enabled": true,
+                "uid": "bABcysqTFybhr7vlEknSu"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "33 - POST todos 415 status",
+          "seq": 3,
+          "request": {
+            "url": "{{base_url}}/todos",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/pdf",
+                "enabled": true
+              },
+              {
+                "name": "Accept",
+                "value": "*/*",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "text",
+              "json": "{\n  \"title\": \"Challenge 32 JSON Task Created\",\n  \"doneStatus\": false,\n  \"description\": \"This is a task created using POST for a JSON content type.\"\n}",
+              "text": "This is just placeholder text.",
+              "xml": "<todo>\n  <doneStatus>false</doneStatus>\n  <description>todo desc sent in XML</description>\n  <title>todo sent in XML</title>\n</todo>",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 415",
+                "enabled": true,
+                "uid": "4pFlih0iIj2gneRHehBmH"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        }
+      ]
     },
     {
       "type": "folder",
-      "name": "13 - Restore your session"
+      "name": "13 - Restore your session",
+      "items": [
+        {
+          "type": "http",
+          "name": "34 - GET challenger guid",
+          "seq": 1,
+          "request": {
+            "url": "{{base_url}}/challenger/896585c3-d205-47af-8176-7d29d5a5a226",
+            "method": "GET",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "json": "{\n  \"title\": \"Challenge 32 JSON Task Created\",\n  \"doneStatus\": false,\n  \"description\": \"This is a task created using POST for a JSON content type.\"\n}",
+              "xml": "<todo>\n  <doneStatus>false</doneStatus>\n  <description>todo desc sent in XML</description>\n  <title>todo sent in XML</title>\n</todo>",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 200",
+                "enabled": true,
+                "uid": "r5JomYtye1KxOMWVO1AnP"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "35 - PUT challenger guid RESTORE",
+          "seq": 2,
+          "request": {
+            "url": "{{base_url}}/challenger/896585c3-d205-47af-8176-7d29d5a5a226",
+            "method": "PUT",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "enabled": true
+              },
+              {
+                "name": "Accept",
+                "value": "application/json",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"xAuthToken\": \"0101c414-c0cf-4adb-8e05-7983b3e0172e\",\n  \"xChallenger\": \"896585c3-d205-47af-8176-7d29d5a5a226\",\n  \"secretNote\": \"\",\n  \"challengeStatus\": {\n    \"POST_CREATE_JSON_ACCEPT_XML\": false,\n    \"POST_TODOS_TOO_LONG_TITLE_LENGTH\": false,\n    \"GET_UNSUPPORTED_ACCEPT_406\": false,\n    \"GET_SECRET_NOTE_200\": false,\n    \"PUT_RESTORABLE_TODOS\": false,\n    \"OVERRIDE_DELETE_HEARTBEAT_405\": false,\n    \"POST_MAX_OUT_TITILE_DESCRIPTION_LENGTH\": false,\n    \"POST_SECRET_NOTE_401\": false,\n    \"DELETE_A_TODO\": false,\n    \"PUT_TODOS_FULL_200\": false,\n    \"GET_JSON_BY_DEFAULT_NO_ACCEPT\": false,\n    \"GET_CHALLENGES\": false,\n    \"POST_TODOS_BAD_DONE_STATUS\": false,\n    \"GET_ACCEPT_XML_PREFERRED\": false,\n    \"DELETE_ALL_TODOS\": false,\n    \"POST_TODOS_415\": true,\n    \"PUT_TODOS_400\": false,\n    \"GET_TODO_404\": false,\n    \"GET_RESTORABLE_CHALLENGER_PROGRESS_STATUS\": true,\n    \"POST_SECRET_NOTE_BEARER_200\": false,\n    \"CREATE_NEW_CHALLENGER\": true,\n    \"PUT_TODOS_400_NO_AMEND_ID\": false,\n    \"GET_SECRET_NOTE_BEARER_200\": false,\n    \"POST_TODOS_TOO_LONG_DESCRIPTION_LENGTH\": false,\n    \"CREATE_SECRET_TOKEN_201\": false,\n    \"DELETE_HEARTBEAT_405\": false,\n    \"POST_TODOS\": true,\n    \"POST_UPDATE_TODO\": false,\n    \"TRACE_HEARTBEAT_501\": false,\n    \"OPTIONS_TODOS\": true,\n    \"OVERRIDE_TRACE_HEARTBEAT_501\": false,\n    \"PUT_TODOS_PARTIAL_200\": false,\n    \"GET_ACCEPT_XML\": false,\n    \"GET_ACCEPT_JSON\": true,\n    \"GET_TODOS_NOT_PLURAL_404\": false,\n    \"POST_SECRET_NOTE_403\": false,\n    \"OVERRIDE_PATCH_HEARTBEAT_500\": false,\n    \"POST_TODOS_404\": false,\n    \"GET_RESTORABLE_TODOS\": false,\n    \"POST_CREATE_XML\": true,\n    \"POST_TODOS_INVALID_EXTRA_FIELD\": false,\n    \"POST_TODOS_TOO_LONG_PAYLOAD_SIZE\": false,\n    \"POST_CREATE_JSON\": true,\n    \"GET_SECRET_NOTE_403\": false,\n    \"GET_TODOS\": true,\n    \"PUT_NEW_RESTORED_CHALLENGER_PROGRESS_STATUS\": false,\n    \"GET_TODO\": false,\n    \"CREATE_SECRET_TOKEN_401\": false,\n    \"POST_ALL_TODOS\": false,\n    \"GET_HEAD_TODOS\": false,\n    \"PUT_RESTORABLE_CHALLENGER_PROGRESS_STATUS\": false,\n    \"GET_TODOS_FILTERED\": false,\n    \"PUT_TODOS_MISSING_TITLE_400\": false,\n    \"POST_SECRET_NOTE_200\": false,\n    \"GET_ACCEPT_ANY_DEFAULT_JSON\": true,\n    \"GET_HEARTBEAT_204\": false,\n    \"GET_SECRET_NOTE_401\": false,\n    \"POST_CREATE_XML_ACCEPT_JSON\": false,\n    \"PATCH_HEARTBEAT_500\": false\n  }\n}",
+              "xml": "<todo>\n  <doneStatus>false</doneStatus>\n  <description>todo desc sent in XML</description>\n  <title>todo sent in XML</title>\n</todo>",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 200",
+                "enabled": true,
+                "uid": "HA2jf3wdDm7ZXgsi5zLmO"
+              },
+              {
+                "name": "res.headers['content-type']",
+                "value": "eq application/json",
+                "enabled": true,
+                "uid": "xRanwFjM0DeHIAWz7wZ4W"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "36 - PUT challenger guid CREATE in progress",
+          "seq": 3,
+          "request": {
+            "url": "{{base_url}}/challenger/896585c3-d205-47af-8176-7d29d5a5a226",
+            "method": "PUT",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "enabled": true
+              },
+              {
+                "name": "Accept",
+                "value": "application/json",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"xAuthToken\": \"0101c414-c0cf-4adb-8e05-7983b3e0172e\",\n  \"xChallenger\": \"896585c3-d205-47af-8176-7d29d5a5a226\",\n  \"secretNote\": \"\",\n  \"challengeStatus\": {\n    \"POST_CREATE_JSON_ACCEPT_XML\": false,\n    \"POST_TODOS_TOO_LONG_TITLE_LENGTH\": false,\n    \"GET_UNSUPPORTED_ACCEPT_406\": false,\n    \"GET_SECRET_NOTE_200\": false,\n    \"PUT_RESTORABLE_TODOS\": false,\n    \"OVERRIDE_DELETE_HEARTBEAT_405\": false,\n    \"POST_MAX_OUT_TITILE_DESCRIPTION_LENGTH\": false,\n    \"POST_SECRET_NOTE_401\": false,\n    \"DELETE_A_TODO\": false,\n    \"PUT_TODOS_FULL_200\": false,\n    \"GET_JSON_BY_DEFAULT_NO_ACCEPT\": false,\n    \"GET_CHALLENGES\": false,\n    \"POST_TODOS_BAD_DONE_STATUS\": false,\n    \"GET_ACCEPT_XML_PREFERRED\": false,\n    \"DELETE_ALL_TODOS\": false,\n    \"POST_TODOS_415\": true,\n    \"PUT_TODOS_400\": false,\n    \"GET_TODO_404\": false,\n    \"GET_RESTORABLE_CHALLENGER_PROGRESS_STATUS\": true,\n    \"POST_SECRET_NOTE_BEARER_200\": false,\n    \"CREATE_NEW_CHALLENGER\": true,\n    \"PUT_TODOS_400_NO_AMEND_ID\": false,\n    \"GET_SECRET_NOTE_BEARER_200\": false,\n    \"POST_TODOS_TOO_LONG_DESCRIPTION_LENGTH\": false,\n    \"CREATE_SECRET_TOKEN_201\": false,\n    \"DELETE_HEARTBEAT_405\": false,\n    \"POST_TODOS\": true,\n    \"POST_UPDATE_TODO\": false,\n    \"TRACE_HEARTBEAT_501\": false,\n    \"OPTIONS_TODOS\": true,\n    \"OVERRIDE_TRACE_HEARTBEAT_501\": false,\n    \"PUT_TODOS_PARTIAL_200\": false,\n    \"GET_ACCEPT_XML\": false,\n    \"GET_ACCEPT_JSON\": true,\n    \"GET_TODOS_NOT_PLURAL_404\": false,\n    \"POST_SECRET_NOTE_403\": false,\n    \"OVERRIDE_PATCH_HEARTBEAT_500\": false,\n    \"POST_TODOS_404\": false,\n    \"GET_RESTORABLE_TODOS\": false,\n    \"POST_CREATE_XML\": true,\n    \"POST_TODOS_INVALID_EXTRA_FIELD\": false,\n    \"POST_TODOS_TOO_LONG_PAYLOAD_SIZE\": false,\n    \"POST_CREATE_JSON\": true,\n    \"GET_SECRET_NOTE_403\": false,\n    \"GET_TODOS\": true,\n    \"PUT_NEW_RESTORED_CHALLENGER_PROGRESS_STATUS\": false,\n    \"GET_TODO\": false,\n    \"CREATE_SECRET_TOKEN_401\": false,\n    \"POST_ALL_TODOS\": false,\n    \"GET_HEAD_TODOS\": false,\n    \"PUT_RESTORABLE_CHALLENGER_PROGRESS_STATUS\": false,\n    \"GET_TODOS_FILTERED\": false,\n    \"PUT_TODOS_MISSING_TITLE_400\": false,\n    \"POST_SECRET_NOTE_200\": false,\n    \"GET_ACCEPT_ANY_DEFAULT_JSON\": true,\n    \"GET_HEARTBEAT_204\": false,\n    \"GET_SECRET_NOTE_401\": false,\n    \"POST_CREATE_XML_ACCEPT_JSON\": false,\n    \"PATCH_HEARTBEAT_500\": false\n  }\n}",
+              "xml": "<todo>\n  <doneStatus>false</doneStatus>\n  <description>todo desc sent in XML</description>\n  <title>todo sent in XML</title>\n</todo>",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 200",
+                "enabled": true,
+                "uid": "5mXr5dPA8kYXM3lZcGv74"
+              },
+              {
+                "name": "res.headers['content-type']",
+                "value": "eq application/json",
+                "enabled": true,
+                "uid": "1dbibmomE7DmBJhPfOsGO"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        }
+      ]
     },
     {
       "type": "folder",
@@ -1468,7 +1778,7 @@
         },
         {
           "name": "challenger_id",
-          "value": "f004c6ad-fc5d-49f8-8db8-51678095c0a3",
+          "value": "896585c3-d205-47af-8176-7d29d5a5a226",
           "enabled": true,
           "secret": false,
           "type": "text"
