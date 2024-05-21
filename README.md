@@ -11,6 +11,8 @@ My solutions to the evil tester's API challenges.
 
 > The API Challenges API is used for managing a To-Do list. You need to authenticate to create a session in the system. This will create a unique API repository with basic test data. As you interact with the API there are a variety of challenges to complete e.g. Get all TODOs, Delete a Todo, etc.
 
+[View the full list of challenges](https://github.com/p2635/evil-tester-api-challenges/blob/main/ListOfChallenges.pdf)
+
 ## Tools used
 
 Bruno v1.17.0 MacOS version
