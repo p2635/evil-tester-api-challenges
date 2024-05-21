@@ -30,7 +30,7 @@
               }
             },
             "script": {
-              "res": "bru.setEnvVar(\"challenger_id\", res.headers['x-challenger'])"
+              "res": "bru.setEnvVar(\"challenger-id\", res.headers['x-challenger'])"
             },
             "vars": {},
             "assertions": [
@@ -38,7 +38,7 @@
                 "name": "res.status",
                 "value": "eq 201",
                 "enabled": true,
-                "uid": "UBy2TQzqg9uTvyQchlDuH"
+                "uid": "X1aCKxDWIG7ujY3IZOukH"
               }
             ],
             "tests": "",
@@ -1596,7 +1596,7 @@
           "name": "34 - GET challenger guid",
           "seq": 1,
           "request": {
-            "url": "{{base_url}}/challenger/896585c3-d205-47af-8176-7d29d5a5a226",
+            "url": "{{base_url}}/challenger/{{challenger_id}}",
             "method": "GET",
             "headers": [],
             "body": {
@@ -1623,7 +1623,85 @@
                 "name": "res.status",
                 "value": "eq 200",
                 "enabled": true,
-                "uid": "r5JomYtye1KxOMWVO1AnP"
+                "uid": "LjhjnK1v40smQ2ymPdZjr"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "38 - PUT challenger database guid",
+          "seq": 5,
+          "request": {
+            "url": "{{base_url}}/challenger/database/{{challenger_id}}",
+            "method": "PUT",
+            "headers": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"todos\": [\n    {\n      \"id\": 3,\n      \"title\": \"process payments\"\n    },\n    {\n      \"id\": 2,\n      \"title\": \"file paperwork\"\n    },\n    {\n      \"id\": 8,\n      \"title\": \"schedule meeting\"\n    },\n    {\n      \"id\": 9,\n      \"title\": \"tidy meeting room\"\n    },\n    {\n      \"id\": 10,\n      \"title\": \"install webcam\"\n    },\n    {\n      \"id\": 7,\n      \"title\": \"train staff\"\n    },\n    {\n      \"id\": 1,\n      \"title\": \"scan paperwork\"\n    },\n    {\n      \"id\": 4,\n      \"title\": \"escalate early payments\"\n    },\n    {\n      \"id\": 6,\n      \"title\": \"process payroll\"\n    },\n    {\n      \"id\": 5,\n      \"title\": \"pay invoices\"\n    }\n  ]\n}",
+              "xml": "<todo>\n  <doneStatus>false</doneStatus>\n  <description>todo desc sent in XML</description>\n  <title>todo sent in XML</title>\n</todo>",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 204",
+                "enabled": true,
+                "uid": "Ujz3WFisHmnQc1sUEfx0z"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "37 - GET challenger database guid",
+          "seq": 4,
+          "request": {
+            "url": "{{base_url}}/challenger/database/{{challenger_id}}",
+            "method": "GET",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "json": "{\n  \"title\": \"Challenge 32 JSON Task Created\",\n  \"doneStatus\": false,\n  \"description\": \"This is a task created using POST for a JSON content type.\"\n}",
+              "xml": "<todo>\n  <doneStatus>false</doneStatus>\n  <description>todo desc sent in XML</description>\n  <title>todo sent in XML</title>\n</todo>",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 200",
+                "enabled": true,
+                "uid": "SEPun2PAsHErydOf5xXJZ"
               }
             ],
             "tests": "",
@@ -1635,7 +1713,7 @@
           "name": "35 - PUT challenger guid RESTORE",
           "seq": 2,
           "request": {
-            "url": "{{base_url}}/challenger/896585c3-d205-47af-8176-7d29d5a5a226",
+            "url": "{{base_url}}/challenger/{{challenger_id}}",
             "method": "PUT",
             "headers": [
               {
@@ -1651,7 +1729,7 @@
             ],
             "body": {
               "mode": "json",
-              "json": "{\n  \"xAuthToken\": \"0101c414-c0cf-4adb-8e05-7983b3e0172e\",\n  \"xChallenger\": \"896585c3-d205-47af-8176-7d29d5a5a226\",\n  \"secretNote\": \"\",\n  \"challengeStatus\": {\n    \"POST_CREATE_JSON_ACCEPT_XML\": false,\n    \"POST_TODOS_TOO_LONG_TITLE_LENGTH\": false,\n    \"GET_UNSUPPORTED_ACCEPT_406\": false,\n    \"GET_SECRET_NOTE_200\": false,\n    \"PUT_RESTORABLE_TODOS\": false,\n    \"OVERRIDE_DELETE_HEARTBEAT_405\": false,\n    \"POST_MAX_OUT_TITILE_DESCRIPTION_LENGTH\": false,\n    \"POST_SECRET_NOTE_401\": false,\n    \"DELETE_A_TODO\": false,\n    \"PUT_TODOS_FULL_200\": false,\n    \"GET_JSON_BY_DEFAULT_NO_ACCEPT\": false,\n    \"GET_CHALLENGES\": false,\n    \"POST_TODOS_BAD_DONE_STATUS\": false,\n    \"GET_ACCEPT_XML_PREFERRED\": false,\n    \"DELETE_ALL_TODOS\": false,\n    \"POST_TODOS_415\": true,\n    \"PUT_TODOS_400\": false,\n    \"GET_TODO_404\": false,\n    \"GET_RESTORABLE_CHALLENGER_PROGRESS_STATUS\": true,\n    \"POST_SECRET_NOTE_BEARER_200\": false,\n    \"CREATE_NEW_CHALLENGER\": true,\n    \"PUT_TODOS_400_NO_AMEND_ID\": false,\n    \"GET_SECRET_NOTE_BEARER_200\": false,\n    \"POST_TODOS_TOO_LONG_DESCRIPTION_LENGTH\": false,\n    \"CREATE_SECRET_TOKEN_201\": false,\n    \"DELETE_HEARTBEAT_405\": false,\n    \"POST_TODOS\": true,\n    \"POST_UPDATE_TODO\": false,\n    \"TRACE_HEARTBEAT_501\": false,\n    \"OPTIONS_TODOS\": true,\n    \"OVERRIDE_TRACE_HEARTBEAT_501\": false,\n    \"PUT_TODOS_PARTIAL_200\": false,\n    \"GET_ACCEPT_XML\": false,\n    \"GET_ACCEPT_JSON\": true,\n    \"GET_TODOS_NOT_PLURAL_404\": false,\n    \"POST_SECRET_NOTE_403\": false,\n    \"OVERRIDE_PATCH_HEARTBEAT_500\": false,\n    \"POST_TODOS_404\": false,\n    \"GET_RESTORABLE_TODOS\": false,\n    \"POST_CREATE_XML\": true,\n    \"POST_TODOS_INVALID_EXTRA_FIELD\": false,\n    \"POST_TODOS_TOO_LONG_PAYLOAD_SIZE\": false,\n    \"POST_CREATE_JSON\": true,\n    \"GET_SECRET_NOTE_403\": false,\n    \"GET_TODOS\": true,\n    \"PUT_NEW_RESTORED_CHALLENGER_PROGRESS_STATUS\": false,\n    \"GET_TODO\": false,\n    \"CREATE_SECRET_TOKEN_401\": false,\n    \"POST_ALL_TODOS\": false,\n    \"GET_HEAD_TODOS\": false,\n    \"PUT_RESTORABLE_CHALLENGER_PROGRESS_STATUS\": false,\n    \"GET_TODOS_FILTERED\": false,\n    \"PUT_TODOS_MISSING_TITLE_400\": false,\n    \"POST_SECRET_NOTE_200\": false,\n    \"GET_ACCEPT_ANY_DEFAULT_JSON\": true,\n    \"GET_HEARTBEAT_204\": false,\n    \"GET_SECRET_NOTE_401\": false,\n    \"POST_CREATE_XML_ACCEPT_JSON\": false,\n    \"PATCH_HEARTBEAT_500\": false\n  }\n}",
+              "json": "{\n  \"xAuthToken\": \"0101c414-c0cf-4adb-8e05-7983b3e0172e\",\n  \"xChallenger\": \"{{challenger_id}}\",\n  \"secretNote\": \"\",\n  \"challengeStatus\": {\n    \"POST_CREATE_JSON_ACCEPT_XML\": false,\n    \"POST_TODOS_TOO_LONG_TITLE_LENGTH\": false,\n    \"GET_UNSUPPORTED_ACCEPT_406\": false,\n    \"GET_SECRET_NOTE_200\": false,\n    \"PUT_RESTORABLE_TODOS\": false,\n    \"OVERRIDE_DELETE_HEARTBEAT_405\": false,\n    \"POST_MAX_OUT_TITILE_DESCRIPTION_LENGTH\": false,\n    \"POST_SECRET_NOTE_401\": false,\n    \"DELETE_A_TODO\": false,\n    \"PUT_TODOS_FULL_200\": false,\n    \"GET_JSON_BY_DEFAULT_NO_ACCEPT\": false,\n    \"GET_CHALLENGES\": false,\n    \"POST_TODOS_BAD_DONE_STATUS\": false,\n    \"GET_ACCEPT_XML_PREFERRED\": false,\n    \"DELETE_ALL_TODOS\": false,\n    \"POST_TODOS_415\": true,\n    \"PUT_TODOS_400\": false,\n    \"GET_TODO_404\": false,\n    \"GET_RESTORABLE_CHALLENGER_PROGRESS_STATUS\": true,\n    \"POST_SECRET_NOTE_BEARER_200\": false,\n    \"CREATE_NEW_CHALLENGER\": true,\n    \"PUT_TODOS_400_NO_AMEND_ID\": false,\n    \"GET_SECRET_NOTE_BEARER_200\": false,\n    \"POST_TODOS_TOO_LONG_DESCRIPTION_LENGTH\": false,\n    \"CREATE_SECRET_TOKEN_201\": false,\n    \"DELETE_HEARTBEAT_405\": false,\n    \"POST_TODOS\": true,\n    \"POST_UPDATE_TODO\": false,\n    \"TRACE_HEARTBEAT_501\": false,\n    \"OPTIONS_TODOS\": true,\n    \"OVERRIDE_TRACE_HEARTBEAT_501\": false,\n    \"PUT_TODOS_PARTIAL_200\": false,\n    \"GET_ACCEPT_XML\": false,\n    \"GET_ACCEPT_JSON\": true,\n    \"GET_TODOS_NOT_PLURAL_404\": false,\n    \"POST_SECRET_NOTE_403\": false,\n    \"OVERRIDE_PATCH_HEARTBEAT_500\": false,\n    \"POST_TODOS_404\": false,\n    \"GET_RESTORABLE_TODOS\": false,\n    \"POST_CREATE_XML\": true,\n    \"POST_TODOS_INVALID_EXTRA_FIELD\": false,\n    \"POST_TODOS_TOO_LONG_PAYLOAD_SIZE\": false,\n    \"POST_CREATE_JSON\": true,\n    \"GET_SECRET_NOTE_403\": false,\n    \"GET_TODOS\": true,\n    \"PUT_NEW_RESTORED_CHALLENGER_PROGRESS_STATUS\": false,\n    \"GET_TODO\": false,\n    \"CREATE_SECRET_TOKEN_401\": false,\n    \"POST_ALL_TODOS\": false,\n    \"GET_HEAD_TODOS\": false,\n    \"PUT_RESTORABLE_CHALLENGER_PROGRESS_STATUS\": false,\n    \"GET_TODOS_FILTERED\": false,\n    \"PUT_TODOS_MISSING_TITLE_400\": false,\n    \"POST_SECRET_NOTE_200\": false,\n    \"GET_ACCEPT_ANY_DEFAULT_JSON\": true,\n    \"GET_HEARTBEAT_204\": false,\n    \"GET_SECRET_NOTE_401\": false,\n    \"POST_CREATE_XML_ACCEPT_JSON\": false,\n    \"PATCH_HEARTBEAT_500\": false\n  }\n}",
               "xml": "<todo>\n  <doneStatus>false</doneStatus>\n  <description>todo desc sent in XML</description>\n  <title>todo sent in XML</title>\n</todo>",
               "formUrlEncoded": [],
               "multipartForm": []
@@ -1673,13 +1751,13 @@
                 "name": "res.status",
                 "value": "eq 200",
                 "enabled": true,
-                "uid": "HA2jf3wdDm7ZXgsi5zLmO"
+                "uid": "BdeKUg7ONe8QiEno3WngL"
               },
               {
                 "name": "res.headers['content-type']",
                 "value": "eq application/json",
                 "enabled": true,
-                "uid": "xRanwFjM0DeHIAWz7wZ4W"
+                "uid": "lkBVWgkcK58MmXdaAOAoL"
               }
             ],
             "tests": "",
@@ -1688,10 +1766,10 @@
         },
         {
           "type": "http",
-          "name": "36 - PUT challenger guid CREATE in progress",
+          "name": "36 - PUT challenger guid CREATE wait 10 mins",
           "seq": 3,
           "request": {
-            "url": "{{base_url}}/challenger/896585c3-d205-47af-8176-7d29d5a5a226",
+            "url": "{{base_url}}/challenger/{{challenger_id}}",
             "method": "PUT",
             "headers": [
               {
@@ -1707,7 +1785,7 @@
             ],
             "body": {
               "mode": "json",
-              "json": "{\n  \"xAuthToken\": \"0101c414-c0cf-4adb-8e05-7983b3e0172e\",\n  \"xChallenger\": \"896585c3-d205-47af-8176-7d29d5a5a226\",\n  \"secretNote\": \"\",\n  \"challengeStatus\": {\n    \"POST_CREATE_JSON_ACCEPT_XML\": false,\n    \"POST_TODOS_TOO_LONG_TITLE_LENGTH\": false,\n    \"GET_UNSUPPORTED_ACCEPT_406\": false,\n    \"GET_SECRET_NOTE_200\": false,\n    \"PUT_RESTORABLE_TODOS\": false,\n    \"OVERRIDE_DELETE_HEARTBEAT_405\": false,\n    \"POST_MAX_OUT_TITILE_DESCRIPTION_LENGTH\": false,\n    \"POST_SECRET_NOTE_401\": false,\n    \"DELETE_A_TODO\": false,\n    \"PUT_TODOS_FULL_200\": false,\n    \"GET_JSON_BY_DEFAULT_NO_ACCEPT\": false,\n    \"GET_CHALLENGES\": false,\n    \"POST_TODOS_BAD_DONE_STATUS\": false,\n    \"GET_ACCEPT_XML_PREFERRED\": false,\n    \"DELETE_ALL_TODOS\": false,\n    \"POST_TODOS_415\": true,\n    \"PUT_TODOS_400\": false,\n    \"GET_TODO_404\": false,\n    \"GET_RESTORABLE_CHALLENGER_PROGRESS_STATUS\": true,\n    \"POST_SECRET_NOTE_BEARER_200\": false,\n    \"CREATE_NEW_CHALLENGER\": true,\n    \"PUT_TODOS_400_NO_AMEND_ID\": false,\n    \"GET_SECRET_NOTE_BEARER_200\": false,\n    \"POST_TODOS_TOO_LONG_DESCRIPTION_LENGTH\": false,\n    \"CREATE_SECRET_TOKEN_201\": false,\n    \"DELETE_HEARTBEAT_405\": false,\n    \"POST_TODOS\": true,\n    \"POST_UPDATE_TODO\": false,\n    \"TRACE_HEARTBEAT_501\": false,\n    \"OPTIONS_TODOS\": true,\n    \"OVERRIDE_TRACE_HEARTBEAT_501\": false,\n    \"PUT_TODOS_PARTIAL_200\": false,\n    \"GET_ACCEPT_XML\": false,\n    \"GET_ACCEPT_JSON\": true,\n    \"GET_TODOS_NOT_PLURAL_404\": false,\n    \"POST_SECRET_NOTE_403\": false,\n    \"OVERRIDE_PATCH_HEARTBEAT_500\": false,\n    \"POST_TODOS_404\": false,\n    \"GET_RESTORABLE_TODOS\": false,\n    \"POST_CREATE_XML\": true,\n    \"POST_TODOS_INVALID_EXTRA_FIELD\": false,\n    \"POST_TODOS_TOO_LONG_PAYLOAD_SIZE\": false,\n    \"POST_CREATE_JSON\": true,\n    \"GET_SECRET_NOTE_403\": false,\n    \"GET_TODOS\": true,\n    \"PUT_NEW_RESTORED_CHALLENGER_PROGRESS_STATUS\": false,\n    \"GET_TODO\": false,\n    \"CREATE_SECRET_TOKEN_401\": false,\n    \"POST_ALL_TODOS\": false,\n    \"GET_HEAD_TODOS\": false,\n    \"PUT_RESTORABLE_CHALLENGER_PROGRESS_STATUS\": false,\n    \"GET_TODOS_FILTERED\": false,\n    \"PUT_TODOS_MISSING_TITLE_400\": false,\n    \"POST_SECRET_NOTE_200\": false,\n    \"GET_ACCEPT_ANY_DEFAULT_JSON\": true,\n    \"GET_HEARTBEAT_204\": false,\n    \"GET_SECRET_NOTE_401\": false,\n    \"POST_CREATE_XML_ACCEPT_JSON\": false,\n    \"PATCH_HEARTBEAT_500\": false\n  }\n}",
+              "json": "{\n  \"xAuthToken\": \"0101c414-c0cf-4adb-8e05-7983b3e0172e\",\n  \"xChallenger\": \"{{challenger_id}}\",\n  \"secretNote\": \"\",\n  \"challengeStatus\": {\n    \"POST_CREATE_JSON_ACCEPT_XML\": false,\n    \"POST_TODOS_TOO_LONG_TITLE_LENGTH\": false,\n    \"GET_UNSUPPORTED_ACCEPT_406\": false,\n    \"GET_SECRET_NOTE_200\": false,\n    \"PUT_RESTORABLE_TODOS\": false,\n    \"OVERRIDE_DELETE_HEARTBEAT_405\": false,\n    \"POST_MAX_OUT_TITILE_DESCRIPTION_LENGTH\": false,\n    \"POST_SECRET_NOTE_401\": false,\n    \"DELETE_A_TODO\": false,\n    \"PUT_TODOS_FULL_200\": false,\n    \"GET_JSON_BY_DEFAULT_NO_ACCEPT\": false,\n    \"GET_CHALLENGES\": false,\n    \"POST_TODOS_BAD_DONE_STATUS\": false,\n    \"GET_ACCEPT_XML_PREFERRED\": false,\n    \"DELETE_ALL_TODOS\": false,\n    \"POST_TODOS_415\": true,\n    \"PUT_TODOS_400\": false,\n    \"GET_TODO_404\": false,\n    \"GET_RESTORABLE_CHALLENGER_PROGRESS_STATUS\": true,\n    \"POST_SECRET_NOTE_BEARER_200\": false,\n    \"CREATE_NEW_CHALLENGER\": true,\n    \"PUT_TODOS_400_NO_AMEND_ID\": false,\n    \"GET_SECRET_NOTE_BEARER_200\": false,\n    \"POST_TODOS_TOO_LONG_DESCRIPTION_LENGTH\": false,\n    \"CREATE_SECRET_TOKEN_201\": false,\n    \"DELETE_HEARTBEAT_405\": false,\n    \"POST_TODOS\": true,\n    \"POST_UPDATE_TODO\": false,\n    \"TRACE_HEARTBEAT_501\": false,\n    \"OPTIONS_TODOS\": true,\n    \"OVERRIDE_TRACE_HEARTBEAT_501\": false,\n    \"PUT_TODOS_PARTIAL_200\": false,\n    \"GET_ACCEPT_XML\": false,\n    \"GET_ACCEPT_JSON\": true,\n    \"GET_TODOS_NOT_PLURAL_404\": false,\n    \"POST_SECRET_NOTE_403\": false,\n    \"OVERRIDE_PATCH_HEARTBEAT_500\": false,\n    \"POST_TODOS_404\": false,\n    \"GET_RESTORABLE_TODOS\": false,\n    \"POST_CREATE_XML\": true,\n    \"POST_TODOS_INVALID_EXTRA_FIELD\": false,\n    \"POST_TODOS_TOO_LONG_PAYLOAD_SIZE\": false,\n    \"POST_CREATE_JSON\": true,\n    \"GET_SECRET_NOTE_403\": false,\n    \"GET_TODOS\": true,\n    \"PUT_NEW_RESTORED_CHALLENGER_PROGRESS_STATUS\": false,\n    \"GET_TODO\": false,\n    \"CREATE_SECRET_TOKEN_401\": false,\n    \"POST_ALL_TODOS\": false,\n    \"GET_HEAD_TODOS\": false,\n    \"PUT_RESTORABLE_CHALLENGER_PROGRESS_STATUS\": false,\n    \"GET_TODOS_FILTERED\": false,\n    \"PUT_TODOS_MISSING_TITLE_400\": false,\n    \"POST_SECRET_NOTE_200\": false,\n    \"GET_ACCEPT_ANY_DEFAULT_JSON\": true,\n    \"GET_HEARTBEAT_204\": false,\n    \"GET_SECRET_NOTE_401\": false,\n    \"POST_CREATE_XML_ACCEPT_JSON\": false,\n    \"PATCH_HEARTBEAT_500\": false\n  }\n}",
               "xml": "<todo>\n  <doneStatus>false</doneStatus>\n  <description>todo desc sent in XML</description>\n  <title>todo sent in XML</title>\n</todo>",
               "formUrlEncoded": [],
               "multipartForm": []
@@ -1727,15 +1805,15 @@
             "assertions": [
               {
                 "name": "res.status",
-                "value": "eq 200",
+                "value": "eq 201",
                 "enabled": true,
-                "uid": "5mXr5dPA8kYXM3lZcGv74"
+                "uid": "fjMpr6yZ8jVKHRuzYIMvZ"
               },
               {
                 "name": "res.headers['content-type']",
                 "value": "eq application/json",
                 "enabled": true,
-                "uid": "1dbibmomE7DmBJhPfOsGO"
+                "uid": "VXbjpWv0qZWqso0LUFbNm"
               }
             ],
             "tests": "",
@@ -1746,26 +1824,1030 @@
     },
     {
       "type": "folder",
-      "name": "14 - Mix Accept and Content-Type Challenges"
+      "name": "14 - Mix Accept and Content-Type Challenges",
+      "items": [
+        {
+          "type": "http",
+          "name": "39 - POST todos XML to JSON",
+          "seq": 1,
+          "request": {
+            "url": "{{base_url}}/todos",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/xml",
+                "enabled": true
+              },
+              {
+                "name": "Accept",
+                "value": "application/json",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "xml",
+              "json": "<todo>\n  <doneStatus>false</doneStatus>\n  <description>my description</description>\n  <title>A title</title>\n</todo>",
+              "xml": "<todo>\n  <doneStatus>false</doneStatus>\n  <description>todo sent in xml but receive in JSON</description>\n  <title>todo sent in xml but receive in JSON</title>\n</todo>",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 201",
+                "enabled": true,
+                "uid": "cRngiyFO7DJ4TKD7rSV32"
+              },
+              {
+                "name": "res.headers['content-type']",
+                "value": "eq application/json",
+                "enabled": true,
+                "uid": "hT9XlZvkZeNBBcyKQ7aoS"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "40 - POST todos JSON to XML",
+          "seq": 2,
+          "request": {
+            "url": "{{base_url}}/todos",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "enabled": true
+              },
+              {
+                "name": "Accept",
+                "value": "application/xml",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"title\": \"todo sent in JSON but receive in XML\",\n  \"doneStatus\": false,\n  \"description\": \"todo sent in JSON but receive in XML\"\n}",
+              "xml": "<todo>\n  <doneStatus>false</doneStatus>\n  <description>todo desc sent in XML</description>\n  <title>todo sent in XML</title>\n</todo>",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 201",
+                "enabled": true,
+                "uid": "zx105rXTF0YIOT1Hq0Fau"
+              },
+              {
+                "name": "res.headers['content-type']",
+                "value": "eq application/xml",
+                "enabled": true,
+                "uid": "4khYDKyw9MmVWLekN54od"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        }
+      ]
     },
     {
       "type": "folder",
-      "name": "15 - HTTP Method Override Challenges"
+      "name": "15 - Status Code Challenges",
+      "items": [
+        {
+          "type": "http",
+          "name": "41 - DELETE heartbeat",
+          "seq": 1,
+          "request": {
+            "url": "{{base_url}}/heartbeat",
+            "method": "DELETE",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "json": "{\n  \"title\": \"todo sent in JSON but receive in XML\",\n  \"doneStatus\": false,\n  \"description\": \"todo sent in JSON but receive in XML\"\n}",
+              "xml": "<todo>\n  <doneStatus>false</doneStatus>\n  <description>todo desc sent in XML</description>\n  <title>todo sent in XML</title>\n</todo>",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 405",
+                "enabled": true,
+                "uid": "vEUoLHjzviI26tdUsmObd"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "42 - PATCH heartbeat",
+          "seq": 2,
+          "request": {
+            "url": "{{base_url}}/heartbeat",
+            "method": "PATCH",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "json": "{\n  \"title\": \"todo sent in JSON but receive in XML\",\n  \"doneStatus\": false,\n  \"description\": \"todo sent in JSON but receive in XML\"\n}",
+              "xml": "<todo>\n  <doneStatus>false</doneStatus>\n  <description>todo desc sent in XML</description>\n  <title>todo sent in XML</title>\n</todo>",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 500",
+                "enabled": true,
+                "uid": "NmPIaqE4qoapubzXnO8aG"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "43 - TRACE heartbeat (use script)",
+          "seq": 3,
+          "request": {
+            "url": "{{base_url}}/heartbeat",
+            "method": "GET",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "json": "{\n  \"title\": \"todo sent in JSON but receive in XML\",\n  \"doneStatus\": false,\n  \"description\": \"todo sent in JSON but receive in XML\"\n}",
+              "xml": "<todo>\n  <doneStatus>false</doneStatus>\n  <description>todo desc sent in XML</description>\n  <title>todo sent in XML</title>\n</todo>",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {
+              "req": "req.setMethod(\"TRACE\");"
+            },
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 501",
+                "enabled": true,
+                "uid": "vbYpI0Op4oATdv2nXfNNj"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "44 - GET heartbeat",
+          "seq": 4,
+          "request": {
+            "url": "{{base_url}}/heartbeat",
+            "method": "GET",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "json": "{\n  \"title\": \"todo sent in JSON but receive in XML\",\n  \"doneStatus\": false,\n  \"description\": \"todo sent in JSON but receive in XML\"\n}",
+              "xml": "<todo>\n  <doneStatus>false</doneStatus>\n  <description>todo desc sent in XML</description>\n  <title>todo sent in XML</title>\n</todo>",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 204",
+                "enabled": true,
+                "uid": "8d88OuqRlLteKjDB5sy8N"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        }
+      ]
     },
     {
       "type": "folder",
-      "name": "16 - Authentication Challenges"
+      "name": "16 - HTTP Method Override Challenges",
+      "items": [
+        {
+          "type": "http",
+          "name": "45 - POST heartbeat as DELETE",
+          "seq": 1,
+          "request": {
+            "url": "{{base_url}}/heartbeat",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "X-HTTP-Method-Override",
+                "value": "DELETE",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": "{\n  \"title\": \"todo sent in JSON but receive in XML\",\n  \"doneStatus\": false,\n  \"description\": \"todo sent in JSON but receive in XML\"\n}",
+              "xml": "<todo>\n  <doneStatus>false</doneStatus>\n  <description>todo desc sent in XML</description>\n  <title>todo sent in XML</title>\n</todo>",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 405",
+                "enabled": true,
+                "uid": "PNKchD5HaFGRKSa3pfbjE"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "46 - POST heartbeat as PATCH",
+          "seq": 2,
+          "request": {
+            "url": "{{base_url}}/heartbeat",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "X-HTTP-Method-Override",
+                "value": "PATCH",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": "{\n  \"title\": \"todo sent in JSON but receive in XML\",\n  \"doneStatus\": false,\n  \"description\": \"todo sent in JSON but receive in XML\"\n}",
+              "xml": "<todo>\n  <doneStatus>false</doneStatus>\n  <description>todo desc sent in XML</description>\n  <title>todo sent in XML</title>\n</todo>",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 500",
+                "enabled": true,
+                "uid": "bkJpMSPdMSxRNXJpL1YIM"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "47 - POST heartbeat as TRACE",
+          "seq": 3,
+          "request": {
+            "url": "{{base_url}}/heartbeat",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "X-HTTP-Method-Override",
+                "value": "TRACE",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": "{\n  \"title\": \"todo sent in JSON but receive in XML\",\n  \"doneStatus\": false,\n  \"description\": \"todo sent in JSON but receive in XML\"\n}",
+              "xml": "<todo>\n  <doneStatus>false</doneStatus>\n  <description>todo desc sent in XML</description>\n  <title>todo sent in XML</title>\n</todo>",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 501",
+                "enabled": true,
+                "uid": "CoF1Qz92xZnsfIxU7XW89"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        }
+      ]
     },
     {
       "type": "folder",
-      "name": "17 - Authorization Challenges"
+      "name": "17 - Authentication Challenges",
+      "items": [
+        {
+          "type": "http",
+          "name": "48 - POST secret token fail",
+          "seq": 1,
+          "request": {
+            "url": "{{base_url}}/secret/token",
+            "method": "POST",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "json": "{\n  \"title\": \"todo sent in JSON but receive in XML\",\n  \"doneStatus\": false,\n  \"description\": \"todo sent in JSON but receive in XML\"\n}",
+              "xml": "<todo>\n  <doneStatus>false</doneStatus>\n  <description>todo desc sent in XML</description>\n  <title>todo sent in XML</title>\n</todo>",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "basic",
+              "basic": {
+                "username": "fake-user",
+                "password": "fake-pass"
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 401",
+                "enabled": true,
+                "uid": "9FGCiUlP4swA6J6lCAMs6"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "49 - POST secret token pass",
+          "seq": 2,
+          "request": {
+            "url": "{{base_url}}/secret/token",
+            "method": "POST",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "json": "{\n  \"title\": \"todo sent in JSON but receive in XML\",\n  \"doneStatus\": false,\n  \"description\": \"todo sent in JSON but receive in XML\"\n}",
+              "xml": "<todo>\n  <doneStatus>false</doneStatus>\n  <description>todo desc sent in XML</description>\n  <title>todo sent in XML</title>\n</todo>",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "basic",
+              "basic": {
+                "username": "admin",
+                "password": "password"
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 201",
+                "enabled": true,
+                "uid": "vQKCtk9Jezg09iGeKThrE"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        }
+      ]
     },
     {
       "type": "folder",
-      "name": "18 - Miscellaneous Challenges"
+      "name": "18 - Authorization Challenges",
+      "items": [
+        {
+          "type": "http",
+          "name": "50 - GET secret note 403",
+          "seq": 1,
+          "request": {
+            "url": "{{base_url}}/secret/note",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "X-AUTH-TOKEN",
+                "value": "fake-token",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": "{\n  \"title\": \"todo sent in JSON but receive in XML\",\n  \"doneStatus\": false,\n  \"description\": \"todo sent in JSON but receive in XML\"\n}",
+              "xml": "<todo>\n  <doneStatus>false</doneStatus>\n  <description>todo desc sent in XML</description>\n  <title>todo sent in XML</title>\n</todo>",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 403",
+                "enabled": true,
+                "uid": "yd49IHxvIC3k62YxMd9Nn"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "51 - GET secret note 401",
+          "seq": 2,
+          "request": {
+            "url": "{{base_url}}/secret/note",
+            "method": "GET",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "json": "{\n  \"title\": \"todo sent in JSON but receive in XML\",\n  \"doneStatus\": false,\n  \"description\": \"todo sent in JSON but receive in XML\"\n}",
+              "xml": "<todo>\n  <doneStatus>false</doneStatus>\n  <description>todo desc sent in XML</description>\n  <title>todo sent in XML</title>\n</todo>",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 401",
+                "enabled": true,
+                "uid": "LcfnD3XIISYZg6iDIzBii"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "52 - GET secret note 200",
+          "seq": 3,
+          "request": {
+            "url": "{{base_url}}/secret/note",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "X-AUTH-TOKEN",
+                "value": "0101c414-c0cf-4adb-8e05-7983b3e0172e",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": "{\n  \"title\": \"todo sent in JSON but receive in XML\",\n  \"doneStatus\": false,\n  \"description\": \"todo sent in JSON but receive in XML\"\n}",
+              "xml": "<todo>\n  <doneStatus>false</doneStatus>\n  <description>todo desc sent in XML</description>\n  <title>todo sent in XML</title>\n</todo>",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 200",
+                "enabled": true,
+                "uid": "ql1dodrr7xH7QplmNUBhn"
+              },
+              {
+                "name": "res.body[\"note\"]",
+                "value": "",
+                "enabled": true,
+                "uid": "yTt53indsxN90jPKjRCBB"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "53 - POST secret note 200",
+          "seq": 4,
+          "request": {
+            "url": "{{base_url}}/secret/note",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "X-AUTH-TOKEN",
+                "value": "0101c414-c0cf-4adb-8e05-7983b3e0172e",
+                "enabled": true
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"note\": \"{{noteText}}\"\n}",
+              "xml": "<todo>\n  <doneStatus>false</doneStatus>\n  <description>todo desc sent in XML</description>\n  <title>todo sent in XML</title>\n</todo>",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {
+              "req": [
+                {
+                  "name": "noteText",
+                  "value": "This note has text.",
+                  "enabled": true,
+                  "local": false
+                }
+              ]
+            },
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 200",
+                "enabled": true,
+                "uid": "w9WA1Y6n0Zo8doapxiY6l"
+              },
+              {
+                "name": "res.body[\"note\"]",
+                "value": "eq {{noteText}}",
+                "enabled": true,
+                "uid": "DQSTez69owxRlD6QXGy1d"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "54 - POST secret note 401",
+          "seq": 5,
+          "request": {
+            "url": "{{base_url}}/secret/note",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"note\": \"{{noteText}}\"\n}",
+              "xml": "<todo>\n  <doneStatus>false</doneStatus>\n  <description>todo desc sent in XML</description>\n  <title>todo sent in XML</title>\n</todo>",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {
+              "req": [
+                {
+                  "name": "noteText",
+                  "value": "This note has text.",
+                  "enabled": true,
+                  "local": false
+                }
+              ]
+            },
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 401",
+                "enabled": true,
+                "uid": "WwDldwgFHBKd7n1e7lXrI"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "55 - POST secret note 403",
+          "seq": 6,
+          "request": {
+            "url": "{{base_url}}/secret/note",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "enabled": true
+              },
+              {
+                "name": "X-AUTH-TOKEN",
+                "value": "fake-token",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"note\": \"{{noteText}}\"\n}",
+              "xml": "<todo>\n  <doneStatus>false</doneStatus>\n  <description>todo desc sent in XML</description>\n  <title>todo sent in XML</title>\n</todo>",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {
+              "req": [
+                {
+                  "name": "noteText",
+                  "value": "This note has text.",
+                  "enabled": true,
+                  "local": false
+                }
+              ]
+            },
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 403",
+                "enabled": true,
+                "uid": "WLaSdWhclsvcMNR5dmG5i"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "56 - GET secret note Bearer 200",
+          "seq": 7,
+          "request": {
+            "url": "{{base_url}}/secret/note",
+            "method": "GET",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "xml": "<todo>\n  <doneStatus>false</doneStatus>\n  <description>todo desc sent in XML</description>\n  <title>todo sent in XML</title>\n</todo>",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "bearer",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": "0101c414-c0cf-4adb-8e05-7983b3e0172e"
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 200",
+                "enabled": true,
+                "uid": "ZNCLyfsl83vr4XsUbLvg7"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "57 - POST secret note Bearer 200",
+          "seq": 8,
+          "request": {
+            "url": "{{base_url}}/secret/note",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"note\": \"{{noteText}}\"\n}",
+              "xml": "<todo>\n  <doneStatus>false</doneStatus>\n  <description>todo desc sent in XML</description>\n  <title>todo sent in XML</title>\n</todo>",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "bearer",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": "0101c414-c0cf-4adb-8e05-7983b3e0172e"
+              }
+            },
+            "script": {},
+            "vars": {
+              "req": [
+                {
+                  "name": "noteText",
+                  "value": "This note has text.",
+                  "enabled": true,
+                  "local": false
+                }
+              ]
+            },
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 200",
+                "enabled": true,
+                "uid": "nBWU1U6LSHcY68WStjagp"
+              },
+              {
+                "name": "res.body[\"note\"]",
+                "value": "eq {{noteText}}",
+                "enabled": true,
+                "uid": "BrHUz0Ui8nx0yoeKCF2e1"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "19 - Miscellaneous Challenges",
+      "items": [
+        {
+          "type": "http",
+          "name": "58 - DELETE todo all",
+          "seq": 1,
+          "request": {
+            "url": "{{base_url}}/todos/10",
+            "method": "DELETE",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "json": "{\n  \"id\": 2,\n  \"title\": \"This is an amended title\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 200",
+                "enabled": true,
+                "uid": "M5IPaPDwSnowIIiIb7Nto"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "59 - POST todos all JSON",
+          "seq": 2,
+          "request": {
+            "url": "{{base_url}}/todos",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "enabled": true
+              },
+              {
+                "name": "Accept",
+                "value": "application/json",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"title\": \"Challenge 59 JSON Task Created\",\n  \"doneStatus\": false,\n  \"description\": \"This is a task created using POST for a JSON content type.\"\n}",
+              "xml": "<todo>\n  <doneStatus>false</doneStatus>\n  <description>todo desc sent in XML</description>\n  <title>todo sent in XML</title>\n</todo>",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 201",
+                "enabled": true,
+                "uid": "RE5jIhKc4rQSVBhGEEIci"
+              },
+              {
+                "name": "res.headers['content-type']",
+                "value": "eq application/json",
+                "enabled": true,
+                "uid": "fPHfXt5dnoGxZLF0OUCri"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        }
+      ]
     }
   ],
-  "activeEnvironmentUid": "TA1kpQXgRBizzzSsRN7zm",
+  "activeEnvironmentUid": "5LcX1eeQuHn0zuFv1O8l1",
   "environments": [
     {
       "variables": [
@@ -1778,13 +2860,13 @@
         },
         {
           "name": "challenger_id",
-          "value": "896585c3-d205-47af-8176-7d29d5a5a226",
+          "value": "8e838301-6013-4190-b965-1fa01755404e",
           "enabled": true,
           "secret": false,
           "type": "text"
         }
       ],
-      "name": "Heroku Instance"
+      "name": "Public Heroku"
     }
   ]
 }
