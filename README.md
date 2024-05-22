@@ -4,13 +4,13 @@
 
 My solutions to the evil tester's API challenges.
 
-* [About the API challenges](https://apichallenges.herokuapp.com/apichallenges)
-* [Todo list API documentation](https://apichallenges.herokuapp.com/docs)
-
 ## About the project
 
-* The API is used to manage a To-Do list. It is written in Java, runnable locally and has been deployed to the cloud for easy access.
-* The challenges has simple CRUD (Create, Read, Update, Delete) functions e.g. get all todos, delete a todo, etc. [View the full list of challenges](https://github.com/p2635/evil-tester-api-challenges/blob/main/ListOfChallenges.pdf)
+* The API is used to manage a To-Do list with simple CRUD (Create, Read, Update, Delete). It is written in Java, runnable locally and has been deployed to the cloud for easy access.
+* [About the API challenges](https://apichallenges.herokuapp.com/apichallenges) - information on API challenges and the application.
+* [Full list of API challenges](https://github.com/p2635/evil-tester-api-challenges/blob/main/ListOfChallenges.pdf) - The challenges include get all todos, delete a todo, bad requests etc. 
+* [Simple Todo List API documentation on the EvilTester website](https://apichallenges.herokuapp.com/docs)
+
 
 ## Tools used
 
