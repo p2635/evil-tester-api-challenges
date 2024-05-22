@@ -15,7 +15,7 @@ My solutions to the evil tester's API challenges.
 
 ## Tools used
 
-Bruno v1.17.0 MacOS version
+Bruno v1.17.0 (API client) MacOS version
 
 ## List of issues found
 
