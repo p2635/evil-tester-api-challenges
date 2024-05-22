@@ -11,10 +11,16 @@ My solutions to the evil tester's API challenges.
 * [Full list of API challenges](https://github.com/p2635/evil-tester-api-challenges/blob/main/ListOfChallenges.pdf) - The challenges include get all todos, delete a todo, bad requests etc. 
 * [Simple Todo List API documentation](https://apichallenges.herokuapp.com/docs)
 
+## Test Approach
+
+* Testing the cloud API instance - The data clears itself every 10 minutes, so this decreases my testing efficiency. Luckily, the API supports the save/restore of session data.
+* Simply going through the challenges - Initially I went through the challenges as list. This helped me to learn more about the API, REST methods, different response codes.
+* Going beyond the challenges - Now that I finished the challenges, I can think more about how to implement automated checks and other tests beyond the challenges.  
 
 ## Tools used
 
-Bruno v1.17.0 (API client) MacOS version
+* Bruno v1.17.0 (API client) MacOS version - To read and write API requests and responses, write simple asserts e.g. check for 200 OK.
+* API Challenges Progress Tracker - The API challenges website has a page that allows me to track my progress on each challenge.
 
 ## List of issues found
 
