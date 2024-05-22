@@ -13,7 +13,7 @@ My solutions to the evil tester's API challenges.
 
 ## Test Approach
 
-* Testing the cloud API instance - To make things easier, I decided to develop my tests against the public cloud instance of the API.
+* Testing the cloud API instance - To make things easier, I decided to develop my tests against the public cloud instance of the API (https://apichallenges.herokuapp.com/).
 * Simply doing the challenges - Initially I went through the challenges as list. This helped me to learn more about the API, REST methods, different response codes.
 * Going beyond the challenges - Now that I finished the challenges, I can think more about how to implement automated checks and other tests beyond the challenges.  
 
