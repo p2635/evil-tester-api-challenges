@@ -16,3 +16,7 @@ My solutions to the evil tester's API challenges.
 ## Tools used
 
 Bruno v1.17.0 MacOS version
+
+## List of issues found
+
+[See logged issues on the eviltester repo](https://github.com/eviltester/thingifier/issues/created_by/p2635) (this is filtered by the issues that I logged).
