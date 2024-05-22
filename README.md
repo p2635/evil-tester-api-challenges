@@ -1,5 +1,7 @@
 # Evil Tester API Challenges
 
+<img width="600" alt="Screenshot image of Bruno API client" src="https://github.com/p2635/evil-tester-api-challenges/assets/4522927/ab6ed6d3-c06c-4314-bb98-6832daa08b90">
+
 My solutions to the evil tester's API challenges.
 
 * [About the API challenges](https://apichallenges.herokuapp.com/apichallenges)
