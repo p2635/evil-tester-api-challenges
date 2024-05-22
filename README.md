@@ -29,3 +29,7 @@ My solutions to the evil tester's API challenges.
 ## List of issues found
 
 [See logged issues on the eviltester repo](https://github.com/eviltester/thingifier/issues/created_by/p2635) (this is filtered by the issues that I logged).
+
+## What I learned 
+
+- I learned to use the Bruno API client - configure variables, headers, auth, simple asserts, inspecting response.
