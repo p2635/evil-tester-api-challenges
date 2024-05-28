@@ -1,17 +1,14 @@
 # Todo List API Challenges
 
-<img width="600" alt="Screenshot image of Bruno API client" src="https://github.com/p2635/todo-list-api-challenges/assets/4522927/ab6ed6d3-c06c-4314-bb98-6832daa08b90">
-
-My solutions to the evil tester's API challenges.
-
 ## About the project
 
-* The API is used to manage a To-Do list with simple CRUD (Create, Read, Update, Delete). It is written in Java, runnable locally and has been deployed to the cloud for easy access. To make things easier, I decided to develop my tests against the public cloud instance of the API (https://apichallenges.herokuapp.com/).
+This project includes my solutions to the evil tester's API challenges. The API is used to manage a To-Do list with simple CRUD (Create, Read, Update, Delete). Although the app is runnable locally, I decided to develop my tests against the public cloud instance (https://apichallenges.herokuapp.com/).
+
 * [About the API challenges](https://apichallenges.herokuapp.com/apichallenges) - information on API challenges and the application.
 * [Full list of API challenges](https://github.com/p2635/todo-list-api-challenges/blob/main/ListOfChallenges.pdf) - The challenges include get all todos, delete a todo, bad requests etc. 
 * [Simple Todo List API documentation](https://apichallenges.herokuapp.com/docs)
 
-Here is a diagram that I made to visualise the API:
+Here is a diagram that I made that visualises the API:
 
 ![A UML-style diagram of the todo list API](./diagrams/api-diagram.png)
 
