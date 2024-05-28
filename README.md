@@ -12,7 +12,7 @@ Here is a diagram that I made that visualises the API:
 
 Although the app is runnable locally, I decided to develop my tests against the public cloud instance (https://apichallenges.herokuapp.com/).
 
-- [Simply doing the challenges](./docs/challenges-list.pdf) - Initially I went through the challenges as list. This helped me to learn more about the API, REST methods, different response codes.
+- [Simply doing the challenges](./docs/challenges-list.pdf) - Initially I went through the challenges as listed. This helped me to learn more about the API, REST methods, different response codes.
 - Going beyond the challenges - Now that I finished the challenges, I can think more about how to implement automated checks and other tests beyond the challenges.
 
 ## Tools used
