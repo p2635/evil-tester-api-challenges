@@ -2,7 +2,7 @@
 
 ## About the project
 
-This project includes my solutions to the evil tester's API challenges. The API is used to manage a To-Do list with simple CRUD (Create, Read, Update, Delete). Although the app is runnable locally, I decided to develop my tests against the public cloud instance (https://apichallenges.herokuapp.com/).
+This project includes my solutions to the evil tester's API challenges. The API is used to manage a To-Do list with simple CRUD (Create, Read, Update, Delete). 
 
 * [About the API challenges](https://apichallenges.herokuapp.com/apichallenges) - information on API challenges and the application.
 * [Full list of API challenges](./ListOfChallenges.pdf) - The challenges include get all todos, delete a todo, bad requests etc. 
@@ -13,6 +13,8 @@ Here is a diagram that I made that visualises the API:
 ![A UML-style diagram of the todo list API](./diagrams/api-diagram.png)
 
 ## Test Approach
+
+Although the app is runnable locally, I decided to develop my tests against the public cloud instance (https://apichallenges.herokuapp.com/).
 
 * Simply doing the challenges - Initially I went through the challenges as list. This helped me to learn more about the API, REST methods, different response codes.
 * Going beyond the challenges - Now that I finished the challenges, I can think more about how to implement automated checks and other tests beyond the challenges.  
