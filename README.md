@@ -35,6 +35,6 @@ Here is a diagram that I made that visualises the API:
 
 - I learned to use the Bruno API client - configure variables, headers, auth, simple asserts, inspecting response.
 
-### License
+## License
 
 [MIT](LICENSE)
