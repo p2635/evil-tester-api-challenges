@@ -2,10 +2,7 @@
 
 ## About the project
 
-This project includes my solutions to the evil tester's API challenges. The API is used to manage a To-Do list with simple CRUD (Create, Read, Update, Delete).
-
-- [About the API challenges](https://apichallenges.herokuapp.com/apichallenges) - information on API challenges and the application.
-- [Simple Todo List API documentation](https://apichallenges.herokuapp.com/docs) - documentation on the API endpoints and methods.
+This project includes my solutions to the [evil tester's API challenges](https://apichallenges.herokuapp.com/apichallenges). The API is used to manage a To-Do list with simple CRUD (Create, Read, Update, Delete), [here is the API documentation](https://apichallenges.herokuapp.com/docs).
 
 Here is a diagram that I made that visualises the API:
 
