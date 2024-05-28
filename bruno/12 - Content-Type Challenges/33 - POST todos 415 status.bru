@@ -1,0 +1,49 @@
+meta {
+  name: 33 - POST todos 415 status
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{base_url}}/todos
+  body: text
+  auth: none
+}
+
+headers {
+  Content-Type: application/pdf
+  Accept: */*
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+body:json {
+  {
+    "title": "Challenge 32 JSON Task Created",
+    "doneStatus": false,
+    "description": "This is a task created using POST for a JSON content type."
+  }
+}
+
+body:text {
+  This is just placeholder text.
+}
+
+body:xml {
+  <todo>
+    <doneStatus>false</doneStatus>
+    <description>todo desc sent in XML</description>
+    <title>todo sent in XML</title>
+  </todo>
+}
+
+assert {
+  res.status: eq 415
+}

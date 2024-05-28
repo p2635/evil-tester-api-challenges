@@ -1,0 +1,28 @@
+meta {
+  name: 30 - GET todos invalid accept
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{base_url}}/todos
+  body: none
+  auth: none
+}
+
+headers {
+  Accept: application/gzip
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+assert {
+  res.status: eq 406
+}

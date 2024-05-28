@@ -1,0 +1,36 @@
+meta {
+  name: 16 - PUT to create a todo with new id
+  type: http
+  seq: 1
+}
+
+put {
+  url: {{base_url}}/todos/9999
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+body:json {
+  {
+    "title": "PUT test new todo",
+    "doneStatus": false,
+    "description": "This is a PUT test to attempt to create a todo."
+  }
+}
+
+assert {
+  res.status: eq 400
+}

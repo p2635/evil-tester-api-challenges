@@ -1,0 +1,35 @@
+meta {
+  name: 17 - POST to update todo to done
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{base_url}}/todos/1
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+body:json {
+  {
+    "doneStatus": true
+  }
+}
+
+assert {
+  res.status: eq 200
+  res.body.doneStatus: eq true
+}

@@ -1,0 +1,34 @@
+meta {
+  name: 21 - PUT no title
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{base_url}}/todos/1
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+body:json {
+  {
+    "title": ""
+  }
+}
+
+assert {
+  res.status: eq 400
+}

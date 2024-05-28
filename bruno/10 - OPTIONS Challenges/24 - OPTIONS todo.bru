@@ -1,0 +1,25 @@
+meta {
+  name: 24 - OPTIONS todo
+  type: http
+  seq: 1
+}
+
+options {
+  url: {{base_url}}/todos
+  body: none
+  auth: none
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+assert {
+  res.status: eq 204
+  res.headers.allow: eq OPTIONS, GET, HEAD, POST
+}

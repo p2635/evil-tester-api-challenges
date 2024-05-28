@@ -1,0 +1,24 @@
+meta {
+  name: 06 - GET todos with id -does not exist-
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{base_url}}/todos/0
+  body: none
+  auth: none
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+assert {
+  res.status: eq 404
+}

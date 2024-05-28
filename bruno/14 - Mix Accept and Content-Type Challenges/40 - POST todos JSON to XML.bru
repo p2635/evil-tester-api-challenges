@@ -1,0 +1,46 @@
+meta {
+  name: 40 - POST todos JSON to XML
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base_url}}/todos
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/xml
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+body:json {
+  {
+    "title": "todo sent in JSON but receive in XML",
+    "doneStatus": false,
+    "description": "todo sent in JSON but receive in XML"
+  }
+}
+
+body:xml {
+  <todo>
+    <doneStatus>false</doneStatus>
+    <description>todo desc sent in XML</description>
+    <title>todo sent in XML</title>
+  </todo>
+}
+
+assert {
+  res.status: eq 201
+  res.headers['content-type']: eq application/xml
+}

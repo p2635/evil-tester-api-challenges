@@ -1,0 +1,35 @@
+meta {
+  name: 22 - PUT no amend id
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{base_url}}/todos/1
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+body:json {
+  {
+    "id": 2,
+    "title": "This is an amended title"
+  }
+}
+
+assert {
+  res.status: eq 400
+}

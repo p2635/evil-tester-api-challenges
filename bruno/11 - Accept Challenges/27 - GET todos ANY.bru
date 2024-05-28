@@ -1,0 +1,29 @@
+meta {
+  name: 27 - GET todos ANY
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{base_url}}/todos
+  body: none
+  auth: none
+}
+
+headers {
+  Accept: */*
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+assert {
+  res.status: eq 200
+  res.headers['content-type']: eq application/json
+}

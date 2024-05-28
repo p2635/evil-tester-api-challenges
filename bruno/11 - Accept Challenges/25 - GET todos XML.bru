@@ -1,0 +1,30 @@
+meta {
+  name: 25 - GET todos XML
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/todos
+  body: none
+  auth: none
+}
+
+headers {
+  Accept: application/xml
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+assert {
+  res.status: eq 200
+  res.headers['content-type']: eq application/xml
+  res.body: startsWith <todos>
+}

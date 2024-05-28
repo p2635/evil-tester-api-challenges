@@ -1,0 +1,40 @@
+meta {
+  name: 34 - GET challenger guid
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/challenger/{{challenger_id}}
+  body: none
+  auth: none
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+body:json {
+  {
+    "title": "Challenge 32 JSON Task Created",
+    "doneStatus": false,
+    "description": "This is a task created using POST for a JSON content type."
+  }
+}
+
+body:xml {
+  <todo>
+    <doneStatus>false</doneStatus>
+    <description>todo desc sent in XML</description>
+    <title>todo sent in XML</title>
+  </todo>
+}
+
+assert {
+  res.status: eq 200
+}

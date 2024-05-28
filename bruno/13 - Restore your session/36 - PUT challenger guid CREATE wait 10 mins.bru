@@ -1,0 +1,107 @@
+meta {
+  name: 36 - PUT challenger guid CREATE wait 10 mins
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{base_url}}/challenger/{{challenger_id}}
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+body:json {
+  {
+    "xAuthToken": "0101c414-c0cf-4adb-8e05-7983b3e0172e",
+    "xChallenger": "{{challenger_id}}",
+    "secretNote": "",
+    "challengeStatus": {
+      "POST_CREATE_JSON_ACCEPT_XML": false,
+      "POST_TODOS_TOO_LONG_TITLE_LENGTH": false,
+      "GET_UNSUPPORTED_ACCEPT_406": false,
+      "GET_SECRET_NOTE_200": false,
+      "PUT_RESTORABLE_TODOS": false,
+      "OVERRIDE_DELETE_HEARTBEAT_405": false,
+      "POST_MAX_OUT_TITILE_DESCRIPTION_LENGTH": false,
+      "POST_SECRET_NOTE_401": false,
+      "DELETE_A_TODO": false,
+      "PUT_TODOS_FULL_200": false,
+      "GET_JSON_BY_DEFAULT_NO_ACCEPT": false,
+      "GET_CHALLENGES": false,
+      "POST_TODOS_BAD_DONE_STATUS": false,
+      "GET_ACCEPT_XML_PREFERRED": false,
+      "DELETE_ALL_TODOS": false,
+      "POST_TODOS_415": true,
+      "PUT_TODOS_400": false,
+      "GET_TODO_404": false,
+      "GET_RESTORABLE_CHALLENGER_PROGRESS_STATUS": true,
+      "POST_SECRET_NOTE_BEARER_200": false,
+      "CREATE_NEW_CHALLENGER": true,
+      "PUT_TODOS_400_NO_AMEND_ID": false,
+      "GET_SECRET_NOTE_BEARER_200": false,
+      "POST_TODOS_TOO_LONG_DESCRIPTION_LENGTH": false,
+      "CREATE_SECRET_TOKEN_201": false,
+      "DELETE_HEARTBEAT_405": false,
+      "POST_TODOS": true,
+      "POST_UPDATE_TODO": false,
+      "TRACE_HEARTBEAT_501": false,
+      "OPTIONS_TODOS": true,
+      "OVERRIDE_TRACE_HEARTBEAT_501": false,
+      "PUT_TODOS_PARTIAL_200": false,
+      "GET_ACCEPT_XML": false,
+      "GET_ACCEPT_JSON": true,
+      "GET_TODOS_NOT_PLURAL_404": false,
+      "POST_SECRET_NOTE_403": false,
+      "OVERRIDE_PATCH_HEARTBEAT_500": false,
+      "POST_TODOS_404": false,
+      "GET_RESTORABLE_TODOS": false,
+      "POST_CREATE_XML": true,
+      "POST_TODOS_INVALID_EXTRA_FIELD": false,
+      "POST_TODOS_TOO_LONG_PAYLOAD_SIZE": false,
+      "POST_CREATE_JSON": true,
+      "GET_SECRET_NOTE_403": false,
+      "GET_TODOS": true,
+      "PUT_NEW_RESTORED_CHALLENGER_PROGRESS_STATUS": false,
+      "GET_TODO": false,
+      "CREATE_SECRET_TOKEN_401": false,
+      "POST_ALL_TODOS": false,
+      "GET_HEAD_TODOS": false,
+      "PUT_RESTORABLE_CHALLENGER_PROGRESS_STATUS": false,
+      "GET_TODOS_FILTERED": false,
+      "PUT_TODOS_MISSING_TITLE_400": false,
+      "POST_SECRET_NOTE_200": false,
+      "GET_ACCEPT_ANY_DEFAULT_JSON": true,
+      "GET_HEARTBEAT_204": false,
+      "GET_SECRET_NOTE_401": false,
+      "POST_CREATE_XML_ACCEPT_JSON": false,
+      "PATCH_HEARTBEAT_500": false
+    }
+  }
+}
+
+body:xml {
+  <todo>
+    <doneStatus>false</doneStatus>
+    <description>todo desc sent in XML</description>
+    <title>todo sent in XML</title>
+  </todo>
+}
+
+assert {
+  res.status: eq 201
+  res.headers['content-type']: eq application/json
+}

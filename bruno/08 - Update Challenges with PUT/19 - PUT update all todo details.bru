@@ -1,0 +1,39 @@
+meta {
+  name: 19 - PUT update all todo details
+  type: http
+  seq: 1
+}
+
+put {
+  url: {{base_url}}/todos/1
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+body:json {
+  {
+    "title": "Updated todo title",
+    "doneStatus": true,
+    "description": "Updated todo description. The todo should be done status."
+  }
+}
+
+assert {
+  res.status: eq 200
+  res.body.title: eq Updated todo title
+  res.body.doneStatus: eq true
+  res.body.description: eq Updated todo description. The todo should be done status.
+}

@@ -1,0 +1,79 @@
+meta {
+  name: 38 - PUT challenger database guid
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{base_url}}/challenger/database/{{challenger_id}}
+  body: json
+  auth: none
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+body:json {
+  {
+    "todos": [
+      {
+        "id": 3,
+        "title": "process payments"
+      },
+      {
+        "id": 2,
+        "title": "file paperwork"
+      },
+      {
+        "id": 8,
+        "title": "schedule meeting"
+      },
+      {
+        "id": 9,
+        "title": "tidy meeting room"
+      },
+      {
+        "id": 10,
+        "title": "install webcam"
+      },
+      {
+        "id": 7,
+        "title": "train staff"
+      },
+      {
+        "id": 1,
+        "title": "scan paperwork"
+      },
+      {
+        "id": 4,
+        "title": "escalate early payments"
+      },
+      {
+        "id": 6,
+        "title": "process payroll"
+      },
+      {
+        "id": 5,
+        "title": "pay invoices"
+      }
+    ]
+  }
+}
+
+body:xml {
+  <todo>
+    <doneStatus>false</doneStatus>
+    <description>todo desc sent in XML</description>
+    <title>todo sent in XML</title>
+  </todo>
+}
+
+assert {
+  res.status: eq 204
+}

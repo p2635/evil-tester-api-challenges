@@ -1,0 +1,24 @@
+meta {
+  name: 05 - GET todos with id
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{base_url}}/todos/1
+  body: none
+  auth: none
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+assert {
+  res.status: eq 200
+}

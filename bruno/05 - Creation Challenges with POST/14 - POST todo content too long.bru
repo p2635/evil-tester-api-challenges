@@ -1,0 +1,36 @@
+meta {
+  name: 14 - POST todo content too long
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{base_url}}/todos
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+body:json {
+  {
+    "title": "Content too long test",
+    "doneStatus": false,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a massa faucibus ex facilisis pretium at vitae mi. Nulla facilisi. Sed ut pharetra nunc. Praesent tincidunt tellus vel tellus gravida mollis. Aenean cursus magna id ligula tincidunt, in eleifend leo fermentum. Nam tempus vel tortor ut auctor. Cras eget turpis enim. Aenean felis dolor, ullamcorper a ex vitae, iaculis aliquam purus. Aenean nisi tortor, rutrum et vulputate id, varius elementum tortor. Phasellus lacinia gravida nulla, commodo posuere est feugiat nec. Vivamus tincidunt tellus urna, vulputate egestas massa cursus et. Proin hendrerit metus id libero sodales lobortis. In hac habitasse platea dictumst. Aenean pharetra mattis leo nec fringilla. Integer fringilla molestie massa, vitae ornare risus facilisis sit amet. Fusce imperdiet arcu a leo cursus, id vulputate nunc fermentum. Nulla pharetra in sapien sed iaculis. Integer interdum ante nunc, in lobortis nisi aliquet eu. Donec finibus dolor quis augue sodales, eu accumsan lectus efficitur. Fusce malesuada mauris non lacus lacinia efficitur. Pellentesque egestas in sem et aliquet. Integer enim nulla, porttitor sed mi id, porttitor tempus est. Pellentesque ipsum sem, ornare a neque id, maximus facilisis erat. Curabitur porta tortor a sodales malesuada. Praesent non tempor dolor. Nullam eros eros, aliquam vitae dapibus at, tempus viverra ex. Aliquam malesuada semper risus, non porta libero finibus sagittis. Morbi sagittis, sapien vitae consectetur gravida, elit erat laoreet velit, quis blandit nibh ligula ut tortor. Curabitur nec velit id odio imperdiet porttitor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce id purus id diam elementum accumsan. Aliquam ultrices, metus et dignissim auctor, lacus ex commodo nibh, semper consequat erat sem a tortor. Aliquam sit amet nibh massa. Duis dignissim, metus ut consequat egestas, enim nibh pharetra mi, ac ultrices nibh est at tellus. Integer vitae pharetra leo. Etiam accumsan orci vehicula eros dapibus sollicitudin. Curabitur suscipit viverra ullamcorper. Morbi euismod luctus dolor, vitae ultricies quam finibus quis. Curabitur tellus orci, sodales quis sollicitudin eu, ullamcorper vitae purus. Vestibulum tellus odio, viverra id imperdiet rutrum, blandit in nunc. Phasellus in mauris eget mi vulputate lacinia vitae vel nulla. Aenean iaculis quis nibh et rhoncus. Ut viverra enim sit amet massa mollis, ut fringilla massa bibendum. Praesent viverra lorem a lacinia iaculis. Donec commodo, mauris posuere consectetur mattis, eros justo pharetra tellus, eget euismod sapien orci sed orci. Nunc sodales accumsan orci, eget facilisis ante semper at. Praesent euismod ultrices nisi, ut egestas nulla scelerisque sit amet. Aliquam erat volutpat. Aliquam vestibulum ultricies elit, at ullamcorper diam scelerisque sit amet. Duis a dui ultrices, iaculis risus a, lobortis neque. Quisque lorem arcu, aliquam quis purus id, volutpat auctor est. Proin rutrum nulla pulvinar velit sagittis, sed fermentum ex dapibus. Cras cursus diam sed tristique ullamcorper. Praesent convallis risus urna, ac pellentesque est iaculis in. Maecenas viverra interdum eros, nec venenatis sem sodales vel. Duis hendrerit pretium dui vel blandit. Pellentesque sed erat quis urna accumsan tristique quis ut magna. Vestibulum nec dolor feugiat, fringilla turpis quis, tempor arcu. Nullam tortor eros, fermentum quis augue at, sagittis hendrerit nulla. Maecenas ut dolor sed massa auctor convallis. Proin vitae elit tristique, consectetur tortor vel, fringilla urna. Curabitur interdum tempor odio et blandit. Cras a placerat metus, ut venenatis ex. Cras pulvinar metus a tellus bibendum, non vestibulum diam imperdiet. Nullam tempor nisl quis risus dapibus consequat. Morbi posuere risus lectus, eget pretium mi sodales sed. In accumsan elit a facilisis egestas. Proin sodales ultricies pellentesque. Aenean mollis scelerisque convallis. Vestibulum vel nulla faucibus, sagittis dui non, molestie velit. Morbi pulvinar dapibus quam id hendrerit. In gravida sed arcu in interdum. Suspendisse faucibus ullamcorper pellentesque. Pellentesque tempus tempus turpis ullamcorper maximus. Nunc lacinia est vitae ex fermentum sollicitudin. Etiam in tellus maximus, aliquam ligula nec, auctor nibh. In consectetur aliquam magna, at placerat orci mollis dignissim. Curabitur et lorem nisl. Cras leo dolor, maximus a ex sed, elementum efficitur velit. Aliquam suscipit, libero sed pretium commodo, nisl risus aliquam orci, a suscipit nulla odio a eros. Aenean nec lectus non risus luctus mollis ultricies a nisl. Donec lectus lorem, placerat in arcu at, vehicula maximus nisl. Morbi velit felis, congue maximus nibh vel, cursus feugiat justo. In a facilisis ligula, et pellentesque odio. Vivamus ac maximus lacus. Donec cursus at odio et tempus. Morbi porta vehicula lobortis. Ut lacus tellus, euismod et nisl condimentum, malesuada ornare felis. Duis consequat, nibh scelerisque porttitor semper, risus a."
+  }
+}
+
+assert {
+  res.status: eq 413
+}

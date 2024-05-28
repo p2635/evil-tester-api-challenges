@@ -1,0 +1,31 @@
+meta {
+  name: 58 - DELETE todo all
+  type: http
+  seq: 1
+}
+
+delete {
+  url: {{base_url}}/todos/10
+  body: none
+  auth: none
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+body:json {
+  {
+    "id": 2,
+    "title": "This is an amended title"
+  }
+}
+
+assert {
+  res.status: eq 200
+}

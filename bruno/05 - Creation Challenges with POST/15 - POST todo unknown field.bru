@@ -1,0 +1,37 @@
+meta {
+  name: 15 - POST todo unknown field
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{base_url}}/todos
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+body:json {
+  {
+    "title": "I am a title",
+    "doneStatus": false,
+    "description": "I'm a description.",
+    "bonusField": "I am an extra field that does not exist in the spec."
+  }
+}
+
+assert {
+  res.status: eq 400
+}

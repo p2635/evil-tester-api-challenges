@@ -1,0 +1,40 @@
+meta {
+  name: 44 - GET heartbeat
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{base_url}}/heartbeat
+  body: none
+  auth: none
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+body:json {
+  {
+    "title": "todo sent in JSON but receive in XML",
+    "doneStatus": false,
+    "description": "todo sent in JSON but receive in XML"
+  }
+}
+
+body:xml {
+  <todo>
+    <doneStatus>false</doneStatus>
+    <description>todo desc sent in XML</description>
+    <title>todo sent in XML</title>
+  </todo>
+}
+
+assert {
+  res.status: eq 204
+}

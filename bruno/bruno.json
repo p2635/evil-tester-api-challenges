@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "bruno-evil-tester-api-challenges",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

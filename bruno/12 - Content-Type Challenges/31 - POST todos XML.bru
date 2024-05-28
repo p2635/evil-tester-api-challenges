@@ -1,0 +1,46 @@
+meta {
+  name: 31 - POST todos XML
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{base_url}}/todos
+  body: xml
+  auth: none
+}
+
+headers {
+  Content-Type: application/xml
+  Accept: application/xml
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+body:json {
+  <todo>
+    <doneStatus>false</doneStatus>
+    <description>my description</description>
+    <title>A title</title>
+  </todo>
+}
+
+body:xml {
+  <todo>
+    <doneStatus>false</doneStatus>
+    <description>todo desc sent in XML</description>
+    <title>todo sent in XML</title>
+  </todo>
+}
+
+assert {
+  res.status: eq 201
+  res.headers['content-type']: eq application/xml
+}
