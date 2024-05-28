@@ -19,8 +19,9 @@ Here is a diagram that I made that visualises the API:
 
 ## Tools used
 
-* Bruno v1.17.0 (API client) MacOS version - To read and write API requests and responses, write simple asserts e.g. check for 200 OK.
-* API Challenges Progress Tracker - The API challenges website has a page that allows me to track my progress on each challenge.
+| Tool | Description |
+| ----------- | ----------- |
+| <img src="https://github.com/usebruno/bruno/raw/main/assets/images/logo-transparent.png" width="120" alt="Icon of Bruno API client"/> | Bruno v1.17.0 (API client) MacOS version - To read and write API requests and responses, write simple asserts e.g. check for 200 OK. |
 
 ## Challenges I faced
 
@@ -33,3 +34,7 @@ Here is a diagram that I made that visualises the API:
 ## What I learned 
 
 - I learned to use the Bruno API client - configure variables, headers, auth, simple asserts, inspecting response.
+
+### License
+
+[MIT](LICENSE)
