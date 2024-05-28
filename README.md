@@ -13,7 +13,7 @@ My solutions to the evil tester's API challenges.
 
 Here is a diagram that I made to visualise the API:
 
-![A UML-style diagram of the todo list API](https://github.com/p2635/todo-list-api-challenges/blob/main/diagrams/api-diagram.png)
+![A UML-style diagram of the todo list API](./diagrams/api-diagram.png)
 
 ## Test Approach
 
