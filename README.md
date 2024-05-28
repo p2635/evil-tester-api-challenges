@@ -21,7 +21,7 @@ Here is a diagram that I made that visualises the API:
 
 | Tool | Description |
 | ----------- | ----------- |
-| <img src="https://github.com/usebruno/bruno/raw/main/assets/images/logo-transparent.png" width="120" alt="Icon of Bruno API client"/> | Bruno v1.17.0 (API client) MacOS version - To read and write API requests and responses, write simple asserts e.g. check for 200 OK. |
+| <a href="https://www.usebruno.com/"><img src="https://github.com/usebruno/bruno/raw/main/assets/images/logo-transparent.png" width="120" alt="Icon of Bruno API client"/></a> | Bruno v1.17.0 (API client) MacOS version - To read and write API requests and responses, write simple asserts e.g. check for 200 OK. |
 
 ## Challenges I faced
 
