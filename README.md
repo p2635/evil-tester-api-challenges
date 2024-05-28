@@ -26,7 +26,7 @@ Although the app is runnable locally, I decided to develop my tests against the 
 
 ## Challenges I faced
 
-1. Testing the cloud API instance - The data clears itself every 10 minutes, so this decreases my testing efficiency. Luckily, the API supports the save/restore of session data.
+1. Test Data Availability - On the cloud instance, the test data clears itself every 10 minutes so this makes my testing less efficient. Luckily, the API supports the save/restore of session data.
 
 ## List of issues found
 
