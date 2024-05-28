@@ -2,27 +2,26 @@
 
 ## About the project
 
-This project includes my solutions to the evil tester's API challenges. The API is used to manage a To-Do list with simple CRUD (Create, Read, Update, Delete). 
+This project includes my solutions to the evil tester's API challenges. The API is used to manage a To-Do list with simple CRUD (Create, Read, Update, Delete).
 
-* [About the API challenges](https://apichallenges.herokuapp.com/apichallenges) - information on API challenges and the application.
-* [Full list of API challenges](./ListOfChallenges.pdf) - The challenges include get all todos, delete a todo, bad requests etc. 
-* [Simple Todo List API documentation](https://apichallenges.herokuapp.com/docs) - documentation on the API endpoints and methods.
+- [About the API challenges](https://apichallenges.herokuapp.com/apichallenges) - information on API challenges and the application.
+- [Simple Todo List API documentation](https://apichallenges.herokuapp.com/docs) - documentation on the API endpoints and methods.
 
 Here is a diagram that I made that visualises the API:
 
-![A UML-style diagram of the todo list API](./diagrams/api-diagram.png)
+![A UML-style diagram of the todo list API](./docs/api-diagram.png)
 
 ## Test Approach
 
 Although the app is runnable locally, I decided to develop my tests against the public cloud instance (https://apichallenges.herokuapp.com/).
 
-* Simply doing the challenges - Initially I went through the challenges as list. This helped me to learn more about the API, REST methods, different response codes.
-* Going beyond the challenges - Now that I finished the challenges, I can think more about how to implement automated checks and other tests beyond the challenges.  
+- [Simply doing the challenges](./docs/challenges-list.pdf) - Initially I went through the challenges as list. This helped me to learn more about the API, REST methods, different response codes.
+- Going beyond the challenges - Now that I finished the challenges, I can think more about how to implement automated checks and other tests beyond the challenges.
 
 ## Tools used
 
-| Tool | Description |
-| ----------- | ----------- |
+| Tool                                                                                                                                                                          | Description                                                                                                                          |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | <a href="https://www.usebruno.com/"><img src="https://github.com/usebruno/bruno/raw/main/assets/images/logo-transparent.png" width="120" alt="Icon of Bruno API client"/></a> | Bruno v1.17.0 (API client) MacOS version - To read and write API requests and responses, write simple asserts e.g. check for 200 OK. |
 
 ## Challenges I faced
@@ -33,7 +32,7 @@ Although the app is runnable locally, I decided to develop my tests against the 
 
 [See logged issues on the eviltester repo](https://github.com/eviltester/thingifier/issues/created_by/p2635) (this is filtered by the issues that I logged).
 
-## What I learned 
+## What I learned
 
 - I learned to use the Bruno API client - configure variables, headers, auth, simple asserts, inspecting response.
 
