@@ -6,7 +6,7 @@ This project includes my solutions to the evil tester's API challenges. The API 
 
 * [About the API challenges](https://apichallenges.herokuapp.com/apichallenges) - information on API challenges and the application.
 * [Full list of API challenges](https://github.com/p2635/todo-list-api-challenges/blob/main/ListOfChallenges.pdf) - The challenges include get all todos, delete a todo, bad requests etc. 
-* [Simple Todo List API documentation](https://apichallenges.herokuapp.com/docs)
+* [Simple Todo List API documentation](https://apichallenges.herokuapp.com/docs) - documentation on the API endpoints and methods.
 
 Here is a diagram that I made that visualises the API:
 
