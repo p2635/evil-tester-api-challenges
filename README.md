@@ -19,7 +19,7 @@ Although the app is runnable locally, I decided to develop my tests against the 
 
 | Tool                                                                                                                                                                          | Description                                                                                                                          |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| <a href="https://www.usebruno.com/"><img src="https://github.com/usebruno/bruno/raw/main/assets/images/logo-transparent.png" width="120" alt="Icon of Bruno API client"/></a> | Bruno v1.17.0 (API client) MacOS version - To read and write API requests and responses, write simple asserts e.g. check for 200 OK. |
+| <a href="https://www.usebruno.com/"><img src="https://github.com/usebruno/bruno/raw/main/assets/images/logo-transparent.png" width="120" alt="Icon of Bruno API client"/></a> | Bruno v1.18.1 (API client) MacOS version - To read and write API requests and responses, write simple asserts e.g. check for 200 OK. |
 
 ## Challenges I faced
 
